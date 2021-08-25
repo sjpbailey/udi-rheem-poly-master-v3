@@ -30,7 +30,6 @@ class RheemController(udi_interface.Node):
         self.poly.subscribe(self.poly.START, self.start, address)
         self.poly.subscribe(self.poly.LOGLEVEL, self.handleLevelChange)
         self.poly.subscribe(self.poly.CUSTOMPARAMS, self.parameterHandler)
-        self.poly.subscribe(self.poly.POLL, self.poll)
         self.poly.ready()
         self.poly.addNode(self)
 
