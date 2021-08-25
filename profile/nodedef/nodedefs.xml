@@ -23,6 +23,8 @@
             <st id="GV1" editor="raw" />
             <st id="GV2" editor="deg_f" />
             <st id="GV3" editor="serial" />
+            <st id="GV4" editor="mode" />
+            
         </sts>
         <cmds>
             <sends />

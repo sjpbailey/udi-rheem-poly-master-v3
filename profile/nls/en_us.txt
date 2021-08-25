@@ -24,9 +24,12 @@ ST-rheemnode-ST-NAME = Node Status
 ST-rheemnode-GV1-NAME = Name
 ST-rheemnode-GV2-NAME = Setpoint
 ST-rheemnode-GV3-NAME = Serial Number
+ST-rheemnode-GV4-NAME = Mode
 
 CMD-rheemnode-GONOW-NAME = Poll
 CMD-rheemnode-QUERY-NAME = Query
 
 #CMD-rheemnode-DON-NAME = On
 #CMD-rheemnode-DOF-NAME = Off
+
+

@@ -48,6 +48,7 @@ class RheemNode(udi_interface.Node):
                     self.setDriver('GV1', str(f"{equipment.device_name}"))
                     self.setDriver('GV2', str(f"{equipment.set_point}"))  # self.setDriver('GV1', str(f"{equipment.set_point}"))
                     self.setDriver('GV3', str(f"{equipment.serial_number}"))
+                    self.setDriver('GV4', str(f"{equipment.modes}"))
 
                 return equip_list
             else:
@@ -84,6 +85,7 @@ class RheemNode(udi_interface.Node):
         {'driver': 'GV1', 'value': 0, 'uom': 0},
         {'driver': 'GV2', 'value': 0, 'uom': 17},
         {'driver': 'GV3', 'value': 0, 'uom': 0},
+        {'driver': 'GV4', 'value': 0, 'uom': 0},
         ]
 
     id = 'rheemnodeid'

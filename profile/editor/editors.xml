@@ -3,6 +3,10 @@
 	<editor id="bool">
 		<range uom="2" subset="0,1" />
 	</editor>
+
+	<editor id="mode">
+		<range uom="2" subset="0,1,2,3,4,5,6,7,8,9,10" />
+	</editor>
 	
 	<editor id="raw">
 		<range uom="56" min="-10000" max="10000" prec="0" /> 
