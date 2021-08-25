@@ -90,7 +90,7 @@ class RheemNode(udi_interface.Node):
     def cmd_off(self, command):
         self.setDriver('ST', 0)
 
-    def goNow(self):
+    def goNow(self, command):
         #LOGGER.debug("Query sensor {}".format(self.address))
         asyncio.run(self.querynodes())
         #self.reportDrivers()     
