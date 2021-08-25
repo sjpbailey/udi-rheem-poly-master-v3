@@ -14,6 +14,20 @@ from pyeconet.equipment import EquipmentType
 
 LOGGER = udi_interface.LOGGER
 
+""" MODES
+    OFF = 1
+    ELECTRIC_MODE = 2
+    ENERGY_SAVING = 3
+    HEAT_PUMP_ONLY = 4
+    HIGH_DEMAND = 5
+    GAS = 6
+    ENERGY_SAVER = 7
+    PERFORMANCE = 8
+    VACATION = 9
+    ELECTRIC = 10
+    HEAT_PUMP = 11
+    UNKNOWN = 99"""
+
 class RheemNode(udi_interface.Node):
     def __init__(self, polyglot, primary, address, name, email, password):
         super(RheemNode, self).__init__(polyglot, primary, address, name)
