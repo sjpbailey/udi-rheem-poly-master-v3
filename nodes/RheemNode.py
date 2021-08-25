@@ -42,7 +42,7 @@ class RheemNode(udi_interface.Node):
         LOGGER.debug('%s: get ST=%s',self.lpfx,self.getDriver('ST'))
         self.http = urllib3.PoolManager()
 
-    async def goNow(self):
+    async def getInformed(self):
     
     #email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
     #password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
@@ -92,7 +92,7 @@ class RheemNode(udi_interface.Node):
 
     def goNow(self, command):
         #LOGGER.debug("Query sensor {}".format(self.address))
-        asyncio.run(self.querynodes())
+        asyncio.run(self.getInformed())
         #self.reportDrivers()     
 
     def query(self,command=None):
