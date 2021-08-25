@@ -2,7 +2,7 @@
     "name": "Rheem",
     "docs": "https://github.com/sjpbailey/udi-rheem-poly-master-v3/README.md",
     "type": "python3",
-    "executable": "rheem-poly.py",
+    "executable": "Rheem-poly-ii.py",
     "install": "install.sh",
     "description": "Rheem tankless water heater",
     "notice": "",
