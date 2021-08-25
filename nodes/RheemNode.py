@@ -16,11 +16,11 @@ LOGGER = udi_interface.LOGGER
 
 class RheemNode(udi_interface.Node):
     def __init__(self, polyglot, primary, address, name, email, password):
-        self.email = email
-        self.password = password
         super(RheemNode, self).__init__(polyglot, primary, address, name)
         self.poly = polyglot
         self.lpfx = '%s:%s' % (address,name)
+        self.email = email
+        self.password = password
 
         self.poly.subscribe(self.poly.START, self.start, address)
         self.poly.subscribe(self.poly.POLL, self.poll)
@@ -30,11 +30,11 @@ class RheemNode(udi_interface.Node):
         self.http = urllib3.PoolManager()
 
     async def getInformed(self):
-        self.email = email
-        self.password = password
+        #self.email = email
+        #self.password = password
     
-            #email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
-            #password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
+        email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
+        password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
     
         api = await EcoNetApiInterface.login(email, password)
         all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
