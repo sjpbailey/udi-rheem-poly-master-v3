@@ -1,5 +1,5 @@
-ND-test-NAME = Example - Counter
-ND-test-ICON = Output
+ND-rheem-NAME = Example - Counter
+ND-rheem-ICON = Output
 ST-str-ST-NAME = NodeServer Online
 ST-str-GV0-NAME = raw data 0
 ST-str-GV1-NAME = raw data 1

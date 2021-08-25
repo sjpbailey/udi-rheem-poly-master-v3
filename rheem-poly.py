@@ -29,8 +29,8 @@ TestNode is the device class.  Our simple counter device
 holds two values, the count and the count multiplied by a user defined
 multiplier. These get updated at every shortPoll interval
 '''
-class TestNode(udi_interface.Node):
-    id = 'test'
+class RheemNode(udi_interface.Node):
+    id = 'rheem1'
     drivers = [
             {'driver': 'ST', 'value': 1, 'uom': 2},
             {'driver': 'GV0', 'value': 0, 'uom': 56},
@@ -80,10 +80,48 @@ count, report the current count in GV0 and the current count multiplied by
 the user defined value in GV1. Then display a notice on the dashboard.
 '''
 
+def poll(polltype):
+    global count
+    global Parameters
+
+    if 'shortPoll' in polltype:
+        #if Parameters['email'] is not None:
+        #    email = str(Parameters['email'])
+        #else:
+        #    email = 1
+
+        #node = polyglot.getNode('my_address')
+        #if node is not None:
+        #    count += 1
+
+        #    node.setDriver('GV0', count, True, True)
+        #    node.setDriver('GV1', (count * mult), True, True)
+
+            # be fancy and display a notice on the polyglot dashboard
+            #polyglot.Notices['count'] = 'Current count is {}'.format(count)
+def check_params(self):
+        self.Notices.clear()
+        default_email = "sjpbailey@comcast.net"
+        default_password = "NatiqueRheem61"
+
+        self.email = self.Parameters.email
+        if self.email is None:
+            self.email = default_email
+            LOGGER.error('check_params: Your email is not defined in customParams, please add it.  Using {}'.format(default_email))
+            self.email = default_email
+
+        self.password = self.Parameters.password
+        if self.password is None:
+            self.password = default_password
+            LOGGER.error('check_params: Your password is not defined in customParams, please add it.  Using {}'.format(default_password))
+            self.email = default_password    
+
 async def main():
     
-    email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
-    password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
+    #email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
+    #password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
+    email = email
+    password = password
     api = await EcoNetApiInterface.login(email, password)
     all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
     try:
@@ -107,28 +145,6 @@ async def main():
 
     except Exception as e:
         LOGGER.info("Error: " + str(e))
-
-
-def poll(polltype):
-    global count
-    global Parameters
-
-    if 'shortPoll' in polltype:
-        if Parameters['multiplier'] is not None:
-            mult = int(Parameters['multiplier'])
-        else:
-            mult = 1
-
-        node = polyglot.getNode('my_address')
-        if node is not None:
-            count += 1
-
-            node.setDriver('GV0', count, True, True)
-            node.setDriver('GV1', (count * mult), True, True)
-
-            # be fancy and display a notice on the polyglot dashboard
-            polyglot.Notices['count'] = 'Current count is {}'.format(count)
-
 
 def stop():
     nodes = polyglot.getNodes()
