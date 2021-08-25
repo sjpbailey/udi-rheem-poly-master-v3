@@ -26,5 +26,7 @@ ST-rheemnode-GV2-NAME = Setpoint
 ST-rheemnode-GV3-NAME = Serial Number
 
 CMD-rheemnode-GONOW-NAME = Poll
-CMD-rheemnode-DON-NAME = On
-CMD-rheemnode-DOF-NAME = Off
+CMD-rheemnode-QUERY-NAME = Query
+
+#CMD-rheemnode-DON-NAME = On
+#CMD-rheemnode-DOF-NAME = Off

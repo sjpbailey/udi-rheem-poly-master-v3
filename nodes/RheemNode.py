@@ -19,15 +19,13 @@ class RheemNode(udi_interface.Node):
         super(RheemNode, self).__init__(polyglot, primary, address, name)
         self.poly = polyglot
         self.lpfx = '%s:%s' % (address,name)
-        
-
         self.poly.subscribe(self.poly.START, self.start, address)
         self.poly.subscribe(self.poly.POLL, self.poll)
         self.email = email
         self.password = password
 
     def start(self):
-        
+        self.goNow(self)
         self.http = urllib3.PoolManager()
 
     async def getInformed(self):
@@ -61,7 +59,8 @@ class RheemNode(udi_interface.Node):
     def poll(self, polltype):
         if 'longPoll' in polltype:
             LOGGER.debug('longPoll (node)')
-            self.goNow(self)
+            self.reportDrivers()
+            #self.goNow(self)
         else:
             LOGGER.debug('shortPoll (node)')
             
@@ -90,8 +89,6 @@ class RheemNode(udi_interface.Node):
     id = 'rheemnodeid'
 
     commands = {
-                    'DON': cmd_on,
-                    'DOF': cmd_off,
                     'GONOW': goNow
                     
                 }
