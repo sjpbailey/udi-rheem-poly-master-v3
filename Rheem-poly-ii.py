@@ -26,7 +26,7 @@ class RheemController(udi_interface.Node):
     def __init__(self, polyglot, primary, address, name):
         super(RheemController, self).__init__(polyglot, primary, address, name)
         self.poly = polyglot
-        self.name = 'AMI NEM Controller'  # override what was passed in
+        self.name = 'Rheem Water Heater'  # override what was passed in
         self.hb = 0
         self.Parameters = Custom(polyglot, 'customparams')
         self.Notices = Custom(polyglot, 'notices')

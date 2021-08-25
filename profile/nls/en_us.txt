@@ -1,4 +1,4 @@
-ND-rheem-NAME = Example - Counter
+ND-rheem-NAME = Example - Rheem
 ND-rheem-ICON = Output
 ST-str-ST-NAME = NodeServer Online
 ST-str-GV0-NAME = raw data 0
