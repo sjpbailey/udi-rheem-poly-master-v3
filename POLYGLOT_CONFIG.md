@@ -1,9 +1,29 @@
+
+# Rheem Tankless
+
+The purpose of this Nodeserver is simply to display/report device/node inventory within
+the ISY.
+
+* Supported Nodes
+  * Total Nodes
+  * Scenes
+  * Insteon
+  * Z-Wave
+  * NodeServer Nodes
+
 ## Configuration
 
-shortPoll = the interval used to increment the count
+### Defaults
 
-Custom Parameters:
+* Default Short Poll:  Every 24 Hours
 
-Key = multiplier
-Value = multiply count by multiplier and report in GV1
+* Default Long Poll: Ever 4 minutes (heartbeat)
 
+* email: default_user
+* password: default_password
+* rhe_ip: 127.0.0.1
+
+#### User Provided
+
+* Enter your admin user name, password and IP address to the ISY controller
+* Save and restart the NodeServer
