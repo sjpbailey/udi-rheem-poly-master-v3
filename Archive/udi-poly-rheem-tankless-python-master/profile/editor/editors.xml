@@ -1,0 +1,20 @@
+<editors>
+    <!-- Boolean -->
+    
+    <editor id="bool">
+        <range uom="2" subset="0,1" />
+    </editor>
+
+    <editor id="FAHVAL">
+        <range uom="17" min="0" max="1000" prec="4" />
+    </editor>
+
+    <editor id="RAWVAL">
+        <range uom="56" min="0" max="1000" prec="4" />
+    </editor>
+
+    <editor id="I_DEBUG">
+      <range uom="25" subset="9,10,20,30,40,50" nls="CDM"/>
+    </editor>
+
+</editors>

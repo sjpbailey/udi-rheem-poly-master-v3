@@ -1,0 +1,33 @@
+{
+    "name": "Rheem",
+    "docs": "https://github.com/UniversalDevicesInc/udi-example1-poly/README.md",
+    "type": "python3",
+    "executable": "rheem-poly.py",
+    "install": "install.sh",
+    "description": "Rheem tankless water heater",
+    "notice": "",
+    "shortPoll": "60",
+    "longPoll": "600",
+	"logLevel": "INFO",
+    "profile_version": "1.0.0",
+	"customParams": {
+		"multiplier": 1
+	},
+    "credits": [
+    	{
+    		"title": "Example Node Server for ISY/Polyglot",
+    		"author": "Bailey",
+    		"version": "1.0.0",
+    		"date": "August 11, 2021",
+    		"source": "https://github.com/UniversalDevicesInc/udi-example1-poly",
+			"license": "https://github.com/UniversalDevicesInc/udi-example1-poly/LICENSE"
+		}
+	],
+	"store" : {
+		"developer": "sjpbailey1961@gmail.com",
+		"price": 0.00,
+		"recurring": 0,
+		"recurring_interval": "month",
+		"recurring_period": 0
+	}
+}
