@@ -53,7 +53,7 @@ class RheemNode(udi_interface.Node):
                     LOGGER.info(f"\nOperation modes: {equipment.modes}\n")
                     LOGGER.info("{}" .format(f"{equipment}"))
                     #time.sleep(1)
-                    #self.setDriver('GV2', str('{equipment.set_point}'))
+                    self.setDriver('GV1', str('{equipment.set_point}'))
 
                 return equip_list
             else:
@@ -87,7 +87,10 @@ class RheemNode(udi_interface.Node):
     def query(self,command=None):
         self.reportDrivers()
 
-    drivers = [{'driver': 'ST', 'value': 0, 'uom': 2}]
+    drivers = [
+        {'driver': 'ST', 'value': 0, 'uom': 2},
+        {'driver': 'GV1', 'value': 0, 'uom':56},
+        ]
 
     id = 'rheemnodeid'
 

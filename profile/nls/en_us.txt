@@ -21,6 +21,7 @@ CDM-50 = Critical
 ND-rheemnodeid-NAME = Template Node
 ND-rheemnodeid-ICON = Energy monitor
 ST-rheemnode-ST-NAME = Node Status
+ST-rheemnode-GV1-NAME = Setpoint
 CMD-rheemnode-GONOW-NAME = Poll
 CMD-rheemnode-DON-NAME = On
 CMD-rheemnode-DOF-NAME = Off
