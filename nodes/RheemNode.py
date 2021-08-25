@@ -30,35 +30,36 @@ class RheemNode(udi_interface.Node):
         self.http = urllib3.PoolManager()
 
     async def getInformed(self):
+        self.email = email
+        self.password = password
     
-    #email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
-    #password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
+            #email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
+            #password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
     
-            api = await EcoNetApiInterface.login(email, password)
-            all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
-            try:
-                #r = requests.get(url, auth=HTTPBasicAuth(self.ipaddress, self.username, self.password))
-                api = await EcoNetApiInterface.login(email, password=password)
-                r = all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
-                for equip_list in all_equipment.values():
-                    for equipment in equip_list:
-                        LOGGER.info(f"\nName: {equipment.device_name}\n")
-                        LOGGER.info(f"\nSerial #: {equipment.serial_number}\n")
-                        LOGGER.info(f"\nOperation mode: {equipment.device_id}\n")
-                        LOGGER.info(f"\nSet point: {equipment.set_point}\n")
-                        LOGGER.info(f"\nOperation mode: {equipment.mode}\n")
-                        LOGGER.info(f"\nOperation modes: {equipment.modes}\n")
-                        LOGGER.info("{}" .format(f"{equipment}"))
-                        #time.sleep(1)
-                        #self.setDriver('GV2', str('{equipment.set_point}'))
+        api = await EcoNetApiInterface.login(email, password)
+        all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+        try:
+            #r = requests.get(url, auth=HTTPBasicAuth(self.ipaddress, self.username, self.password))
+            api = await EcoNetApiInterface.login(email, password=password)
+            r = all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+            for equip_list in all_equipment.values():
+                for equipment in equip_list:
+                    LOGGER.info(f"\nName: {equipment.device_name}\n")
+                    LOGGER.info(f"\nSerial #: {equipment.serial_number}\n")
+                    LOGGER.info(f"\nOperation mode: {equipment.device_id}\n")
+                    LOGGER.info(f"\nSet point: {equipment.set_point}\n")
+                    LOGGER.info(f"\nOperation mode: {equipment.mode}\n")
+                    LOGGER.info(f"\nOperation modes: {equipment.modes}\n")
+                    LOGGER.info("{}" .format(f"{equipment}"))
+                    #time.sleep(1)
+                    #self.setDriver('GV2', str('{equipment.set_point}'))
 
-                    return equip_list
-                else:
-                    print.error("Rheem Econet Error:  " + equip_list)
-                    return None
-
-            except Exception as e:
-                LOGGER.info("Error: " + str(e))
+                return equip_list
+            else:
+                print.error("Rheem Econet Error:  " + equip_list)
+                return None
+        except Exception as e:
+            LOGGER.info("Error: " + str(e))
 
     def poll(self, polltype):
         if 'longPoll' in polltype:

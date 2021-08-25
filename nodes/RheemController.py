@@ -277,7 +277,6 @@ class RheemController(udi_interface.Node):
         'QUERY': query,
         'DISCOVER': discover,
         'REMOVE_NOTICES_ALL': remove_notices_all,
-        'REMOVE_NOTICE_TEST': remove_notice_test,
     }
     drivers = [
         {'driver': 'ST', 'value': 1, 'uom': 2},

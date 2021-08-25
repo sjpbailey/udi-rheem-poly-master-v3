@@ -1,6 +1,26 @@
-ND-rheemnodeid-NAME = Example - Rheem
-ND-rheemnodeid-ICON = Output
-ST-str-ST-NAME = NodeServer Online
 
-CMD-str-DISCOVER-NAME = Re-Discover
-CMD-str-GONOW-NAME = Poll
+# controller
+ND-controller-NAME = Template NodeServer Controller
+ND-controller-ICON = GenericRspCtl
+CMD-ctl-QUERY-NAME = Query
+CMD-ctl-DISCOVER-NAME = Re-Discover
+CMD-ctl-UPDATE_PROFILE-NAME = Update Profile
+CMD-ctl-REMOVE_NOTICES_ALL-NAME = Remove All Notices
+CMD-ctl-SET_DM-NAME = Set Logger Level
+ST-ctl-ST-NAME = NodeServer Online
+
+# Debug/Logger Modes
+CDM-9 = Debug + Modules
+CDM-10 = Debug
+CDM-20 = Info
+CDM-30 = Warning
+CDM-40 = Error
+CDM-50 = Critical
+
+# mynodetype
+ND-rheemnodeid-NAME = Template Node
+ND-rheemnodeid-ICON = Energy monitor
+ST-rheemnode-ST-NAME = Node Status
+CMD-rheemnode-GONOW-NAME = Poll
+CMD-rheemnode-DON-NAME = On
+CMD-rheemnode-DOF-NAME = Off
