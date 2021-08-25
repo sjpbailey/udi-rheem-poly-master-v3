@@ -1,14 +1,7 @@
 
-
 import udi_interface
 from nodes import RheemNode
 
-"""
-Some shortcuts for udi interface components
-- LOGGER: to create log entries
-- Custom: to access the custom data class
-- ISY:    to communicate directly with the ISY (not commonly used)
-"""
 LOGGER = udi_interface.LOGGER
 LOG_HANDLER = udi_interface.LOG_HANDLER
 Custom = udi_interface.Custom
