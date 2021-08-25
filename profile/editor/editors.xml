@@ -3,10 +3,16 @@
 	<editor id="bool">
 		<range uom="2" subset="0,1" />
 	</editor>
+	
 	<editor id="raw">
 		<range uom="56" min="-10000" max="10000" prec="0" /> 
 	</editor>
+	
 	<editor id="deg_f">
 		<range uom="17" min="-10000" max="10000" prec="0" /> 
+	</editor>
+
+	<editor id="serial">
+		<range uom="56" min="100000000000000000000" max="100000000000000000000" prec="0" /> 
 	</editor>
 </editors>

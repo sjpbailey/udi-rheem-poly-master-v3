@@ -1,10 +1,7 @@
 
-
 import udi_interface
 from nodes import RheemNode
-
 """
-Some shortcuts for udi interface components
 - LOGGER: to create log entries
 - Custom: to access the custom data class
 - ISY:    to communicate directly with the ISY (not commonly used)
@@ -47,13 +44,6 @@ class RheemController(udi_interface.Node):
     def handleLevelChange(self, level):
         LOGGER.info('New log level: {}'.format(level))
 
-    def poll(self, flag):
-        if 'longPoll' in flag:
-            LOGGER.debug('longPoll (controller)')
-            self.heartbeat()
-        else:
-            LOGGER.debug('shortPoll (controller)')
-
     def query(self,command=None):
         
         nodes = self.poly.getNodes()
@@ -61,7 +51,7 @@ class RheemController(udi_interface.Node):
             nodes[node].reportDrivers()
 
     def discover(self, *args, **kwargs):
-        if self.password is not None:
+        if 'ST' == 1:
             self.poly.addNode(RheemNode(self.poly, self.address, 'rheemnodeid', 'Water Heater', self.email, self.password))
 
     def delete(self):
@@ -74,18 +64,15 @@ class RheemController(udi_interface.Node):
         logging.getLogger('urllib3').setLevel(level)
 
     def check_params(self):
-        
         self.Notices.clear()
         default_email = "YourUserName"
         default_password = "YourPassword"
-
         
         self.email = self.Parameters.email
         if self.email is None:
             self.email = default_email
             LOGGER.error('check_params: email not defined in customParams, please add it.  Using {}'.format(default_email))
             self.email = default_emailself.user = self.Parameters.user
-        
 
         self.password = self.Parameters.password
         if self.password is None:
@@ -96,7 +83,9 @@ class RheemController(udi_interface.Node):
         # Add a notice if they need to change the user/password from the default.
         if self.email == default_email or self.password == default_password:
             self.Notices['auth'] = 'Please set proper email and password in configuration page'
-            #self.Notices['test'] = 'This is only a test'
+            self.setDriver('ST', 0)
+        else:
+            self.setDriver('ST', 1)    
 
     def remove_notices_all(self,command):
         LOGGER.info('remove_notices_all: notices={}'.format(self.Notices))
