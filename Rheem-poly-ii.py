@@ -113,7 +113,7 @@ class RheemController(udi_interface.Node):
             self.password = default_password
 
         # Add a notice if they need to change the user/password from the default.
-        if self.user == default_email or self.password == default_password:
+        if self.email == default_email or self.password == default_password:
             self.Notices['auth'] = 'Please set proper user and password in configuration page'
             #self.Notices['test'] = 'This is only a test' 
 
@@ -153,12 +153,7 @@ class RheemController(udi_interface.Node):
     }
     drivers = [
         {'driver': 'ST', 'value': 1, 'uom': 2},
-        {'driver': 'GPV', 'value': 0, 'uom': 2},
-        {'driver': 'CC', 'value': 0, 'uom': 30},
-        {'driver': 'GV1', 'value': 0, 'uom': 73},
-        {'driver': 'TPW', 'value': 0, 'uom': 33},
-        {'driver': 'GV2', 'value': 0, 'uom': 33},
-        {'driver': 'GV3', 'value': 0, 'uom': 33},
+        
     ]
 
 if __name__ == "__main__":
