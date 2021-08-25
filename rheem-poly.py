@@ -42,7 +42,7 @@ def noop(self):
 
 def query(self):
         #LOGGER.debug("Query sensor {}".format(self.address))
-        asyncio.run(self.main())
+        asyncio.run(self.querynodes())
         #self.reportDrivers()        
 
         commands = {
@@ -128,7 +128,7 @@ if __name__ == "__main__":
         polyglot.setCustomParamsDoc()
         polyglot.updateProfile()
 
-async def main():
+async def querynodes():
     
     email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
     password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
