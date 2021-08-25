@@ -67,11 +67,7 @@ class RheemNode(udi_interface.Node):
             LOGGER.debug('longPoll (node)')
         else:
             LOGGER.debug('shortPoll (node)')
-            if int(self.getDriver('ST')) == 1:
-                self.setDriver('ST',0)
-            else:
-                self.setDriver('ST',1)
-            LOGGER.debug('%s: get ST=%s',self.lpfx,self.getDriver('ST'))
+            self.goNow()
 
     def cmd_on(self, command):
         self.setDriver('ST', 1)
@@ -89,7 +85,7 @@ class RheemNode(udi_interface.Node):
 
     drivers = [
         {'driver': 'ST', 'value': 0, 'uom': 2},
-        {'driver': 'GV1', 'value': 0, 'uom':56},
+        {'driver': 'GV1', 'value': 0, 'uom': 17},
         ]
 
     id = 'rheemnodeid'
