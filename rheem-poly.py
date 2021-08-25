@@ -8,6 +8,14 @@ MIT License
 import udi_interface
 import sys
 import time
+import asyncio
+import logging
+
+import requests
+from requests.auth import HTTPBasicAuth #HTTP
+
+from pyeconet import EcoNetApiInterface
+from pyeconet.equipment import EquipmentType
 
 LOGGER = udi_interface.LOGGER
 Custom = udi_interface.Custom
@@ -37,9 +45,9 @@ def query(self):
         asyncio.run(self.main())
         #self.reportDrivers()        
 
-    commands = {
+        commands = {
         'DISCOVER': noop,
-        
+        'QUERY':  query
         }
 
 '''
