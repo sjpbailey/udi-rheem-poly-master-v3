@@ -5,7 +5,7 @@
 	</editor>
 
 	<editor id="mode">
-		<range uom="2" subset="0,1,2,3,4,5,6,7,8,9,10" />
+		<range uom="56" subset="0-101" />
 	</editor>
 	
 	<editor id="raw">
@@ -17,6 +17,6 @@
 	</editor>
 
 	<editor id="serial">
-		<range uom="56" min="100000000000000000000" max="100000000000000000000" prec="0" /> 
+		<range uom="17" min="100000000000000000000" max="100000000000000000000" prec="0" /> 
 	</editor>
 </editors>

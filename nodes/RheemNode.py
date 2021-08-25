@@ -59,7 +59,7 @@ class RheemNode(udi_interface.Node):
                     LOGGER.info(f"\nOperation modes: {equipment.modes}\n")  # modes: [<WaterHeaterOperationMode.OFF: 1>, <WaterHeaterOperationMode.GAS: 6>]
                     LOGGER.info("{}" .format(f"{equipment.set_point}"))
                     #time.sleep(1)
-                    self.setDriver('GV1', str(f"{equipment.device_name}"))
+                    self.setDriver('GV1', str(f"{equipment.mode}"))
                     self.setDriver('GV2', str(f"{equipment.set_point}"))  # self.setDriver('GV1', str(f"{equipment.set_point}"))
                     self.setDriver('GV3', str(f"{equipment.serial_number}"))
                     self.setDriver('GV4', str(f"{equipment.modes}"))
@@ -78,14 +78,7 @@ class RheemNode(udi_interface.Node):
             #self.goNow(self)
         else:
             LOGGER.debug('shortPoll (node)')
-            
-
-    def cmd_on(self, command):
-        self.setDriver('ST', 1)
-
-    def cmd_off(self, command):
-        self.setDriver('ST', 0)
-
+# commands here
     def goNow(self, command):
         #LOGGER.debug("Query sensor {}".format(self.address))
         asyncio.run(self.getInformed())
@@ -97,9 +90,9 @@ class RheemNode(udi_interface.Node):
     drivers = [
         {'driver': 'ST', 'value': 0, 'uom': 2},
         {'driver': 'GV1', 'value': 0, 'uom': 0},
-        {'driver': 'GV2', 'value': 0, 'uom': 17},
-        {'driver': 'GV3', 'value': 0, 'uom': 0},
-        {'driver': 'GV4', 'value': 0, 'uom': 0},
+        {'driver': 'GV2', 'value': 0, 'uom': 17 },
+        {'driver': 'GV3', 'value': 0, 'uom': 17 },
+        {'driver': 'GV4', 'value': 0, 'uom': 17},
         ]
 
     id = 'rheemnodeid'
