@@ -4,7 +4,7 @@ import udi_interface
 import sys
 import time
 import urllib3
-import requests
+
 import xml.etree.ElementTree as ET
 import asyncio
 import logging
