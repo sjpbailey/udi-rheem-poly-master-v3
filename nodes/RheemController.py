@@ -1,7 +1,10 @@
 
+
 import udi_interface
 from nodes import RheemNode
+
 """
+Some shortcuts for udi interface components
 - LOGGER: to create log entries
 - Custom: to access the custom data class
 - ISY:    to communicate directly with the ISY (not commonly used)
@@ -51,8 +54,7 @@ class RheemController(udi_interface.Node):
             nodes[node].reportDrivers()
 
     def discover(self, *args, **kwargs):
-        if 'ST' == 1:
-            self.poly.addNode(RheemNode(self.poly, self.address, 'rheemnodeid', 'Water Heater', self.email, self.password))
+        self.poly.addNode(RheemNode(self.poly, self.address, 'rheemnodeid', 'Water Heater', self.email, self.password))
 
     def delete(self):
         LOGGER.info('deleted.')
@@ -85,7 +87,7 @@ class RheemController(udi_interface.Node):
             self.Notices['auth'] = 'Please set proper email and password in configuration page'
             self.setDriver('ST', 0)
         else:
-            self.setDriver('ST', 1)    
+            self.setDriver('ST', )    
 
     def remove_notices_all(self,command):
         LOGGER.info('remove_notices_all: notices={}'.format(self.Notices))
