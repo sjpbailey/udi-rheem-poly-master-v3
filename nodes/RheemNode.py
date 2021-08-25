@@ -67,7 +67,7 @@ class RheemNode(udi_interface.Node):
             LOGGER.debug('longPoll (node)')
         else:
             LOGGER.debug('shortPoll (node)')
-            self.goNow()
+            self.goNow(self)
 
     def cmd_on(self, command):
         self.setDriver('ST', 1)
