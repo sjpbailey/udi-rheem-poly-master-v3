@@ -169,7 +169,7 @@ class RheemController(udi_interface.Node):
             self.password = default_password
 
         # Add a notice if they need to change the user/password from the default.
-        if self.user == default_email or self.password == default_password:
+        if self.email == default_email or self.password == default_password:
             self.Notices['auth'] = 'Please set proper email and password in configuration page'
             #self.Notices['test'] = 'This is only a test'
 
