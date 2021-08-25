@@ -81,9 +81,9 @@ class RheemNode(udi_interface.Node):
 
     drivers = [
         {'driver': 'ST', 'value': 0, 'uom': 2},
-        {'driver': 'GV1', 'value': 0, 'uom': 56},
+        {'driver': 'GV1', 'value': 0, 'uom': 0},
         {'driver': 'GV2', 'value': 0, 'uom': 17},
-        {'driver': 'GV3', 'value': 0, 'uom': 56},
+        {'driver': 'GV3', 'value': 0, 'uom': 0},
         ]
 
     id = 'rheemnodeid'
