@@ -31,12 +31,6 @@ class RheemNode(udi_interface.Node):
         self.http = urllib3.PoolManager()
 
     async def getInformed(self):
-        #self.email = email
-        #self.password = password
-    
-        #email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
-        #password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
-    
         api = await EcoNetApiInterface.login(self.email, self.password)
         all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
         try:
@@ -50,10 +44,12 @@ class RheemNode(udi_interface.Node):
                     LOGGER.info(f"\nOperation mode: {equipment.device_id}\n")
                     LOGGER.info(f"\nSet point: {equipment.set_point}\n")
                     LOGGER.info(f"\nOperation mode: {equipment.mode}\n")
-                    LOGGER.info(f"\nOperation modes: {equipment.modes}\n")
+                    LOGGER.info(f"\nOperation modes: {equipment.modes}\n")  # modes: [<WaterHeaterOperationMode.OFF: 1>, <WaterHeaterOperationMode.GAS: 6>]
                     LOGGER.info("{}" .format(f"{equipment.set_point}"))
                     #time.sleep(1)
-                    self.setDriver('GV1', str(f"{equipment.set_point}"))  # self.setDriver('GV1', str(f"{equipment.set_point}"))
+                    self.setDriver('GV1', str(f"{equipment.device_name}"))
+                    self.setDriver('GV2', str(f"{equipment.set_point}"))  # self.setDriver('GV1', str(f"{equipment.set_point}"))
+                    self.setDriver('GV3', str(f"{equipment.serial_number}"))
 
                 return equip_list
             else:
@@ -65,9 +61,10 @@ class RheemNode(udi_interface.Node):
     def poll(self, polltype):
         if 'longPoll' in polltype:
             LOGGER.debug('longPoll (node)')
+            self.goNow(self)
         else:
             LOGGER.debug('shortPoll (node)')
-            self.goNow(self)
+            
 
     def cmd_on(self, command):
         self.setDriver('ST', 1)
@@ -85,7 +82,9 @@ class RheemNode(udi_interface.Node):
 
     drivers = [
         {'driver': 'ST', 'value': 0, 'uom': 2},
-        {'driver': 'GV1', 'value': 0, 'uom': 17},
+        {'driver': 'GV1', 'value': 0, 'uom': 56},
+        {'driver': 'GV2', 'value': 0, 'uom': 17},
+        {'driver': 'GV3', 'value': 0, 'uom': 56},
         ]
 
     id = 'rheemnodeid'
