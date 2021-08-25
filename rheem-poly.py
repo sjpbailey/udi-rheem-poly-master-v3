@@ -79,6 +79,36 @@ This is where the real work happens.  When we get a shortPoll, increment the
 count, report the current count in GV0 and the current count multiplied by
 the user defined value in GV1. Then display a notice on the dashboard.
 '''
+
+async def main():
+    
+    email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
+    password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
+    api = await EcoNetApiInterface.login(email, password)
+    all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+    try:
+        #r = requests.get(url, auth=HTTPBasicAuth(self.ipaddress, self.username, self.password))
+        api = await EcoNetApiInterface.login(email, password=password)
+        r = all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+        for equip_list in all_equipment.values():
+            for equipment in equip_list:
+                LOGGER.info(f"\nName: {equipment.device_name}\n")
+                LOGGER.info(f"\nSerial #: {equipment.serial_number}\n")
+                LOGGER.info(f"\nOperation mode: {equipment.device_id}\n")
+                LOGGER.info(f"\nSet point: {equipment.set_point}\n")
+                LOGGER.info(f"\nOperation mode: {equipment.mode}\n")
+                LOGGER.info(f"\nOperation modes: {equipment.modes}\n")
+                
+
+            return equip_list
+        else:
+            print.error("Rheem Econet Error:  " + equip_list)
+            return None
+
+    except Exception as e:
+        LOGGER.info("Error: " + str(e))
+
+
 def poll(polltype):
     global count
     global Parameters
@@ -100,10 +130,6 @@ def poll(polltype):
             polyglot.Notices['count'] = 'Current count is {}'.format(count)
 
 
-'''
-When we are told to stop, we update the node's status to False.  Since
-we don't have a 'controller', we have to do this ourselves.
-'''
 def stop():
     nodes = polyglot.getNodes()
     for n in nodes:
@@ -128,34 +154,10 @@ if __name__ == "__main__":
         polyglot.setCustomParamsDoc()
         polyglot.updateProfile()
 
-async def querynodes():
-    
-    email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
-    password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
-    api = await EcoNetApiInterface.login(email, password)
-    all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
-    try:
-        #r = requests.get(url, auth=HTTPBasicAuth(self.ipaddress, self.username, self.password))
-        api = await EcoNetApiInterface.login(email, password=password)
-        r = all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
-        for equip_list in all_equipment.values():
-            for equipment in equip_list:
-                LOGGER.info(f"\nName: {equipment.device_name}\n")
-                LOGGER.info(f"\nSerial #: {equipment.serial_number}\n")
-                LOGGER.info(f"\nOperation mode: {equipment.device_id}\n")
-                LOGGER.info(f"\nSet point: {equipment.set_point}\n")
-                LOGGER.info(f"\nOperation mode: {equipment.mode}\n")
-                LOGGER.info(f"\nOperation modes: {equipment.modes}\n")
-                
-
-            return equip_list
-        else:
-            LOGGER.info("Rheem Econet Error:  " + equip_list)
-            return None
 
     except Exception as e:
         LOGGER.info("Error: " + str(e))
-        node = TestNode(polyglot, 'my_address', 'my_address', 'Counter')
+        node = TestNode(polyglot, 'my_address', 'my_address', 'Rheem Water Heater')
         polyglot.addNode(node)
         wait_for_node_event()
 
