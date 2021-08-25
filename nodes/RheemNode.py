@@ -19,11 +19,12 @@ class RheemNode(udi_interface.Node):
         super(RheemNode, self).__init__(polyglot, primary, address, name)
         self.poly = polyglot
         self.lpfx = '%s:%s' % (address,name)
-        self.email = email
-        self.password = password
+        
 
         self.poly.subscribe(self.poly.START, self.start, address)
         self.poly.subscribe(self.poly.POLL, self.poll)
+        self.email = email
+        self.password = password
 
     def start(self):
         
@@ -33,14 +34,14 @@ class RheemNode(udi_interface.Node):
         #self.email = email
         #self.password = password
     
-        email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
-        password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
+        #email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
+        #password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
     
-        api = await EcoNetApiInterface.login(email, password)
+        api = await EcoNetApiInterface.login(self.email, self.password)
         all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
         try:
             #r = requests.get(url, auth=HTTPBasicAuth(self.ipaddress, self.username, self.password))
-            api = await EcoNetApiInterface.login(email, password=password)
+            api = await EcoNetApiInterface.login(self.email, password=self.password)
             r = all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
             for equip_list in all_equipment.values():
                 for equipment in equip_list:
