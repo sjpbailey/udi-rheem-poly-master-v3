@@ -79,7 +79,7 @@ class RheemController(udi_interface.Node):
             self.Notices['auth'] = 'Please set proper email and password in configuration page'
             self.setDriver('ST', 0)
         else:
-            self.setDriver('ST', )    
+            self.setDriver('ST', 1)    
 
     def remove_notices_all(self,command):
         LOGGER.info('remove_notices_all: notices={}'.format(self.Notices))
