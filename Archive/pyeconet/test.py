@@ -32,8 +32,8 @@ async def main():
             #print(f"\nSerial #: {equipment.device_type}\n")
             #await equipment._get_energy_usage()
             #equipment.set_mode(OperationMode.GAS)
-    #await asyncio.sleep(300000)
-    #api.unsubscribe()
+            #await asyncio.sleep(300000)
+            #api.unsubscribe()
 
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
