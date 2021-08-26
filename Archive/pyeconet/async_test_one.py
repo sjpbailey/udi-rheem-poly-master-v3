@@ -27,6 +27,7 @@ async def main():
                 print(f"\nSet point: {equipment.set_point}\n")
                 print(f"\nOperation mode: {equipment.mode}\n")
                 print(f"\nOperation modes: {equipment.modes}\n")
+                print(f"\nOperation modes: {equipment.modes enumText}\n")
                 
 
             return equip_list

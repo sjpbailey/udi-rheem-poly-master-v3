@@ -22,7 +22,7 @@ async def main():
         for equipment in equip_list:
             print(f"\nName: {equipment.device_name}\n")
             print(f"\nSet point: {equipment.set_point}\n")
-            print(f"\nSupports modes: {equipment._supports_modes()}\n")
+            print(f"\nSupports modes: {equipment._supports_modes}\n")
             print(f"\nOperation modes: {equipment.modes}\n")
             print(f"\nOperation mode: {equipment.mode}\n")
             #print(f"\nOperation mode: {WaterHeaterOperationMode}\n")
