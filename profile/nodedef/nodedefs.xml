@@ -23,6 +23,7 @@
             <st id="GV2" editor="SERIAL_1" />
             <st id="GV3" editor="SERIAL_1" />
             <st id="GV4" editor="MODE" />
+            <st id="GV5" editor="SERIAL_1" />
             <st id="ST" editor="bool" />
         </sts>
         <cmds>
