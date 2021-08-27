@@ -27,12 +27,16 @@ async def main():
                 print(f"\nSet point: {equipment.set_point}\n")
                 print(f"\nOperation mode: {equipment.mode}\n")
                 print(f"\nOperation modes: {equipment.modes}\n")
-                print(f"\nOperation modes: {equipment.phone_number}\n") #WaterHeaterOperationMode
+                #print(f"\nOperation modes: {equipment.phone_number}\n") #WaterHeaterOperationMode
+                
                 #print(f"\nOperation modes: {equipment}\n") #set_point_limits
                 #print(f"\nOperation modes: {equipment}\n")
                 equipment.set_set_point(equipment.set_point==75==125 )
                 #equipment.set_mode(OperationMode.ELECTRIC_MODE)
                 #await asyncio.sleep(300000)
+                print( str(equipment.modes[-1])) #{}".format(var2,var1))
+                print(equipment.modes[2::]) #str.index(sub[, start[, end]] )
+                #print( str("{}".format(equipment.modes[0:1]))) #{}".format(var2,var1))
 
             return equip_list
         else:
