@@ -59,8 +59,8 @@ class RheemNode(udi_interface.Node):
                     LOGGER.info(f"\nSet point: {equipment.set_point}\n")
                     self.setDriver('GV1', str(f"{equipment.set_point}"))
                     
-                    LOGGER.info(f"\nOperation mode: {equipment.mode}\n")  # Operation mode: WaterHeaterOperationMode.GAS
-                    self.setDriver('GV2', str(f"{equipment.mode}"))
+                    LOGGER.info(f"\nOperation mode: {equipment.mode.value}\n")  # Operation mode: WaterHeaterOperationMode.GAS
+                    self.setDriver('GV2', int(f"{equipment.mode.value}"))
                     
                     LOGGER.info(f"\nOperation modes: {equipment.modes}\n")  # Operation modes: [<WaterHeaterOperationMode.OFF: 1>, <WaterHeaterOperationMode.GAS: 6>]
                     self.setDriver('GV4', str(f"{equipment.modes}"), report=True, force=True, uom=56)
