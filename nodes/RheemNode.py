@@ -70,6 +70,9 @@ class RheemNode(udi_interface.Node):
                     LOGGER.info(f"\nOperation mode: {equipment.device_id}\n")
                     self.setDriver('GV5', str(f"{equipment.device_id}"), report=True, force=True, uom=56)
 
+                    LOGGER.info(f"\nEnabled: {equipment.enabled}\n")
+                    self.setDriver('GV6', str(f"{equipment.enabled}"), report=True, force=True, uom=2)
+
                 return equip_list
             else:
                 print.error("Rheem Econet Error:  " + equip_list)
@@ -100,6 +103,7 @@ class RheemNode(udi_interface.Node):
         {'driver': 'GV3', 'value': 0, 'uom': 56 },
         {'driver': 'GV4', 'value': 0, 'uom': 56},
         {'driver': 'GV5', 'value': 0, 'uom': 56},
+        {'driver': 'GV6', 'value': True, 'uom': 2},
         ]
 
     id = 'rheemnodeid'

@@ -24,6 +24,7 @@
             <st id="GV3" editor="RAWVAL" />
             <st id="GV4" editor="MODE" />
             <st id="GV5" editor="RAWVAL" />
+            <st id="GV6" editor="bool" />
             <st id="ST" editor="bool" />
         </sts>
         <cmds>
