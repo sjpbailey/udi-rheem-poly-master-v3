@@ -4,19 +4,19 @@
 		<range uom="2" subset="0,1" />
 	</editor>
 
-	<editor id="mode">
-		<range uom="56" subset="0-101" />
-	</editor>
+	<editor id="MODE">
+        <range uom="56" min="0" max="10000" prec="0" nls="sts"/>
+    </editor>
 	
-	<editor id="raw">
-		<range uom="56" min="-10000" max="10000" prec="0" /> 
-	</editor>
+	<editor id="RAWVAL">
+        <range uom="56" min="0" max="10000" prec="0" />
+    </editor>
 	
 	<editor id="deg_f">
 		<range uom="17" min="-10000" max="10000" prec="0" /> 
 	</editor>
 
-	<editor id="serial">
-		<range uom="17" min="100000000000000000000" max="100000000000000000000" prec="0" /> 
-	</editor>
+	<editor id="SERIAL_1">
+        <range uom="56" min="0" max="10000" prec="0" />
+    </editor>
 </editors>

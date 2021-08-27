@@ -24,7 +24,7 @@ if __name__ == "__main__":
         polyglot.runForever()
     except (KeyboardInterrupt, SystemExit):
         LOGGER.warning("Received interrupt or exit...")
-       
+    
         polyglot.stop()
     except Exception as err:
         LOGGER.error('Excption: {0}'.format(err), exc_info=True)

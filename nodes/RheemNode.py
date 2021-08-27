@@ -42,11 +42,11 @@ class RheemNode(udi_interface.Node):
         self.goNow(self)
         self.http = urllib3.PoolManager()
 
+    # Data Grab from API
     async def getInformed(self):
         api = await EcoNetApiInterface.login(self.email, self.password)
         all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
         try:
-            #r = requests.get(url, auth=HTTPBasicAuth(self.ipaddress, self.username, self.password))
             api = await EcoNetApiInterface.login(self.email, password=self.password)
             r = all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
             for equip_list in all_equipment.values():
@@ -58,11 +58,11 @@ class RheemNode(udi_interface.Node):
                     LOGGER.info(f"\nOperation mode: {equipment.mode}\n")  # Operation mode: WaterHeaterOperationMode.GAS
                     LOGGER.info(f"\nOperation modes: {equipment.modes}\n")  # Operation modes: [<WaterHeaterOperationMode.OFF: 1>, <WaterHeaterOperationMode.GAS: 6>]
                     LOGGER.info("{}" .format(f"{equipment.set_point}"))
-                    #time.sleep(1)
-                    self.setDriver('GV1', str(f"{equipment.mode}"))
-                    self.setDriver('GV2', str(f"{equipment.set_point}"))  # self.setDriver('GV1', str(f"{equipment.set_point}"))
+                    # Set Drivers
+                    self.setDriver('GV1', str(f"{equipment.set_point}"))  # self.setDriver('GV1', str(f"{equipment.set_point}"))
+                    self.setDriver('GV2', str(f"{equipment.mode}"))
                     self.setDriver('GV3', str(f"{equipment.serial_number}"))
-                    self.setDriver('GV4', str(f"{equipment.modes}"))
+                    self.setDriver('GV4', str(f"{equipment.modes}"), report=True, force=True, uom=56)
 
                 return equip_list
             else:
@@ -89,10 +89,10 @@ class RheemNode(udi_interface.Node):
 
     drivers = [
         {'driver': 'ST', 'value': 0, 'uom': 2},
-        {'driver': 'GV1', 'value': 0, 'uom': 0},
-        {'driver': 'GV2', 'value': 0, 'uom': 17 },
-        {'driver': 'GV3', 'value': 0, 'uom': 17 },
-        {'driver': 'GV4', 'value': 0, 'uom': 17},
+        {'driver': 'GV1', 'value': 0, 'uom': 17},
+        {'driver': 'GV2', 'value': 0, 'uom': 56 },
+        {'driver': 'GV3', 'value': 0, 'uom': 56 },
+        {'driver': 'GV4', 'value': 0, 'uom': 56},
         ]
 
     id = 'rheemnodeid'

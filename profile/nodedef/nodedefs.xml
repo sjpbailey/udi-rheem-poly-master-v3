@@ -19,10 +19,10 @@
     <nodeDef id="rheemnodeid" nls="rheemnode">
         <editors />
         <sts>
-            <st id="GV2" editor="deg_f" />
             <st id="GV1" editor="deg_f" />
-            <st id="GV3" editor="deg_f" />
-            <st id="GV4" editor="deg_f" />
+            <st id="GV2" editor="SERIAL_1" />
+            <st id="GV3" editor="SERIAL_1" />
+            <st id="GV4" editor="MODE" />
             <st id="ST" editor="bool" />
         </sts>
         <cmds>

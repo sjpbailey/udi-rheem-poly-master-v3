@@ -32,4 +32,16 @@ CMD-rheemnode-QUERY-NAME = Query
 #CMD-rheemnode-DON-NAME = On
 #CMD-rheemnode-DOF-NAME = Off
 
-
+sts-0 = DOWN
+sts-1 = OFF
+sts-2 = ELECTRIC_MODE
+sts-3 = ENERGY_SAVINGS
+sts-4 = HEAT_PUMP_ONLY
+sts-5 = HIGH_DEMAND
+sts-6 = GAS
+sts-7 = ENERGY_SAVER
+sts-8 = PERFORMANCE
+sts-9 = VACATION
+sts-10 = ELECTRIC
+sts-11 = HEAT_PUMP
+sts-99 = UNKNOWN
