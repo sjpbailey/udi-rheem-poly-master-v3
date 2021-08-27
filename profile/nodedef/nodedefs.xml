@@ -20,10 +20,10 @@
         <editors />
         <sts>
             <st id="GV1" editor="deg_f" />
-            <st id="GV2" editor="SERIAL_1" />
-            <st id="GV3" editor="SERIAL_1" />
+            <st id="GV2" editor="RAWVAL" />
+            <st id="GV3" editor="RAWVAL" />
             <st id="GV4" editor="MODE" />
-            <st id="GV5" editor="SERIAL_1" />
+            <st id="GV5" editor="RAWVAL" />
             <st id="ST" editor="bool" />
         </sts>
         <cmds>
