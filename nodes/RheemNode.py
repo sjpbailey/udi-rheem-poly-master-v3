@@ -53,7 +53,7 @@ class RheemNode(udi_interface.Node):
                 for equipment in equip_list:
                     LOGGER.info(f"\nName: {equipment.device_name}\n")
                     LOGGER.info(f"\nSerial #: {equipment.serial_number}\n")
-                    await self.setDriver('GV3', str(f"{equipment.serial_number}"))
+                    self.setDriver('GV3', str(f"{equipment.serial_number}"))
                     LOGGER.info(f"\nOperation mode: {equipment.device_id}\n")
                     LOGGER.info(f"\nSet point: {equipment.set_point}\n")
                     await self.setDriver('GV1', str(f"{equipment.set_point}"))
