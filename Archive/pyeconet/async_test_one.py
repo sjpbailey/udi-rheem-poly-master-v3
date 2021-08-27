@@ -35,7 +35,7 @@ async def main():
                 #equipment.set_mode(OperationMode.ELECTRIC_MODE)
                 #await asyncio.sleep(300000)
                 print( str(equipment.modes[-1])) #{}".format(var2,var1))
-                print("{}".format(equipment.modes[0::])) #str.index(sub[, start[, end]] )
+                print("{}".format(equipment.modes[0::1])) #str.index(sub[, start[, end]] )
                 #print( str("{}".format(equipment.modes[0:1]))) #{}".format(var2,var1))
 
             return equip_list
