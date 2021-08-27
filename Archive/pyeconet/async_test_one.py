@@ -8,6 +8,8 @@ from requests.auth import HTTPBasicAuth #HTTP
 from pyeconet import EcoNetApiInterface
 from pyeconet.equipment import EquipmentType
 
+logging.basicConfig()
+logging.getLogger().setLevel(logging.DEBUG)
 
 async def main():
     
@@ -34,9 +36,10 @@ async def main():
                 equipment.set_set_point(equipment.set_point==75==125 )
                 #equipment.set_mode(OperationMode.ELECTRIC_MODE)
                 #await asyncio.sleep(300000)
-                print( str(equipment.modes[-1])) #{}".format(var2,var1))
-                print("{}".format(equipment.modes)) #str.index(sub[, start[, end]] )
-                #print( str("{}".format(equipment.modes[0:1]))) #{}".format(var2,var1))
+                print( str(equipment.modes[-1]))  #WaterHeaterOperationMode.GAS #{}".format(var2,var1))
+                print(str(equipment.modes[0])) #WaterHeaterOperationMode.OFF
+                print(str(equipment.modes[::])) #WaterHeaterOperationMode.OFF
+                print( str(equipment.device_id)) #    # "{}".format(var2,var1))
 
             return equip_list
         else:
