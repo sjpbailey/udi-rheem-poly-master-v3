@@ -32,7 +32,6 @@
                 <cmd id="DOF" />-->
                 <cmd id="QUERY" />
                 <cmd id="GONOW" />
-                <cmd id="ONOF" />
             </accepts>
         </cmds>
     </nodeDef>
