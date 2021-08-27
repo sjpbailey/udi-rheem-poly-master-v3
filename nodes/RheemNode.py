@@ -56,11 +56,11 @@ class RheemNode(udi_interface.Node):
                     self.setDriver('GV3', str(f"{equipment.serial_number}"))
                     LOGGER.info(f"\nOperation mode: {equipment.device_id}\n")
                     LOGGER.info(f"\nSet point: {equipment.set_point}\n")
-                    await self.setDriver('GV1', str(f"{equipment.set_point}"))
+                    self.setDriver('GV1', str(f"{equipment.set_point}"))
                     LOGGER.info(f"\nOperation mode: {equipment.mode}\n")  # Operation mode: WaterHeaterOperationMode.GAS
                     self.setDriver('GV2', str(f"{equipment.mode}"))
                     LOGGER.info(f"\nOperation modes: {equipment.modes}\n")  # Operation modes: [<WaterHeaterOperationMode.OFF: 1>, <WaterHeaterOperationMode.GAS: 6>]
-                    await self.setDriver('GV4', str(f"{equipment.modes}"), report=True, force=True, uom=56)
+                    self.setDriver('GV4', str(f"{equipment.modes}"), report=True, force=True, uom=56)
                     LOGGER.info("{}" .format(f"{equipment.set_point}"))
                     # Set Drivers
                     # self.setDriver('GV1', str(f"{equipment.set_point}"))
