@@ -64,9 +64,6 @@ class RheemNode(udi_interface.Node):
                     LOGGER.info("{}" .format(f"{equipment.set_point}"))
                     # Set Drivers
                     # self.setDriver('GV1', str(f"{equipment.set_point}"))
-                    
-                    
-                    
 
                 return equip_list
             else:
@@ -82,7 +79,7 @@ class RheemNode(udi_interface.Node):
             #self.goNow(self)
         else:
             LOGGER.debug('shortPoll (node)')
-# commands here
+        # commands here
     def goNow(self, command):
         #LOGGER.debug("Query sensor {}".format(self.address))
         asyncio.run(self.getInformed())
