@@ -5,7 +5,7 @@
 	</editor>
 
 	<editor id="MODE">
-        <range uom="56" min="0" max="10000" prec="0" nls="sts"/>
+        <range uom="56" subset="0,100" nls="sts"/>
     </editor>
 	
 	<editor id="RAWVAL">
