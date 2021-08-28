@@ -84,13 +84,15 @@ class RheemNode(udi_interface.Node):
             LOGGER.info("Error: " + str(e))
 
     def poll(self, polltype):
-        if 'longPoll' in polltype:
-            LOGGER.debug('longPoll (node)')
-            self.reportDrivers()
-            #self.goNow(self)
-        else:
+        if 'shortPoll' in polltype:
             LOGGER.debug('shortPoll (node)')
+            self.reportDrivers()
+        else:
+            self.goNow(self)
+            LOGGER.debug('longPoll (node)')
+        
         # commands here
+    
     def goNow(self, command):
         #LOGGER.debug("Query sensor {}".format(self.address))
         asyncio.run(self.getInformed())
