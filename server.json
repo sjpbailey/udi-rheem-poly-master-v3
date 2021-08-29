@@ -7,7 +7,7 @@
     "description": "Rheem tankless water heater",
     "notice": "",
     "shortPoll": "60",
-    "longPoll": "600",
+    "longPoll": "120",
 	"logLevel": "INFO",
     "profile_version": "1.0.0",
 	"customParams": {
