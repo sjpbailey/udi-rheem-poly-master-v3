@@ -34,8 +34,8 @@ async def main():
                 
                 #print(f"\nOperation modes: {equipment}\n") #set_point_limits
                 #print(f"\nOperation modes: {equipment}\n")
-                equipment.set_set_point(equipment.set_point==75==125 )
-                equipment.set_mode("@RUNNING")
+                equipment.set_set_point(equipment._api.publish(int(equipment.set_point==125 ), {equipment.device_id}, {equipment.serial_number}))
+                #equipment.set_mode("@RUNNING")
                 #await asyncio.sleep(300000)
                 print( str(equipment.modes[-1]))  #WaterHeaterOperationMode.GAS #{}".format(var2,var1))
                 print(str(equipment.modes[0])) #WaterHeaterOperationMode.OFF
