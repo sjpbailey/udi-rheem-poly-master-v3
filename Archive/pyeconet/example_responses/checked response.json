@@ -1,0 +1,112 @@
+{
+  "results": {
+    "locations": [
+      {
+        "@AWAY": false,
+        "@AWAYCONFIG": true,
+        "@LOCATION_INFO": "Tracy, CA",
+        "@LOCATION_NAME": "Home",
+        "@LOCATION_STATUS": "I'm Home",
+        "@VACATION": false,
+        "@VACATIONCONFIG": false,
+        "@WEATHER": "99°",
+        "@WEATHER_F": 99,
+        "@WEATHER_I": "sunny.png",
+        "equiptments": [
+          {
+            "@ACTIVE": true,
+            "@ALERTCOUNT": 0,
+            "@AWAY": false,
+            "@AWAYCONFIG": false,
+            "@AWAY_MSG": "",
+            "@BCONFIG": [
+              {
+                "align": "center",
+                "name": "@HEATERSON",
+                "type": "TEXT_LABEL_VIEW",
+                "value": ""
+              }
+            ],
+            "@CONNECTED": true,
+            "@DRACTIVE": {
+              "constraints": {
+                "dialog": [
+                  {
+                    "message": "This should not impact the water temperature in your home. Do you want to opt out for this event ?",
+                    "title": "Tank temperature has been changed in response to a Utility Load Control event",
+                    "value": 1
+                  }
+                ]
+              },
+              "value": ""
+            },
+            "@ENABLED": {
+              "constraints": {
+                "enumText": [
+                  "Disabled",
+                  "Enabled"
+                ],
+                "enumTextIcon": [
+                  "ic_device_off.png",
+                  "ic_enabled.png"
+                ],
+                "lowerLimit": 0,
+                "upperLimit": 1
+              },
+              "status": "Enabled",
+              "value": 1
+            },
+            "@HEATERSON": "",
+            "@NAME": {
+              "constraints": {
+                "stringLength": 64
+              },
+              "value": "Tankless Water Heater"
+            },
+            "@RESUME": false,
+            "@RUNNING": "",
+            "@SCHEDULE": false,
+            "@SCHEDULERESUME": "",
+            "@SCHEDULESTATUS": "",
+            "@SETPOINT": {
+              "constraints": {
+                "error": [],
+                "isConversion": true,
+                "lowerLimit": 85,
+                "unit": 1,
+                "upperLimit": 140,
+                "warning": [
+                  {
+                    "message": "CAUTION HOT WATER. Contact may cause serious burns to skin",
+                    "value": 121
+                  }
+                ]
+              },
+              "value": 138
+            },
+            "@STATUS": "Enabled",
+            "@TCONFIG": [
+              {
+                "align": "center",
+                "name": "@RUNNING",
+                "type": "TEXT_LABEL_VIEW",
+                "value": ""
+              }
+            ],
+            "@TYPE": "tanklessWaterHeater",
+            "actions": [
+              "networkSettings",
+              "waterheaterUsageReportView"
+            ],
+            "device_name": "6309535886154236",
+            "device_type": "WH",
+            "mac_address": "40-9F-38-42-40-57",
+            "serial_number": "40-9F-38-42-40-57-4160"
+          }
+        ],
+        "location_id": "b515bfb8-7f2b-4aa1-aae2-6d9671df4d69"
+      }
+    ]
+  },
+  "success": true
+}
