@@ -56,8 +56,8 @@ async def main():
             #dict_values([[<pyeconet.equipment.water_heater.WaterHeater object at 0x10d4ed410>]])  
             print(f"\nName: {equipment.device_name}\n")
             print("{}" .format(equipment.set_point))
-            payload = {"@SETPOINT": equipment.set_point}
-            print(all_equipment (equipment.set_point))
+            payload = {"@SETPOINT" '125'}
+            print(equipment.set_point)
 
 
     """await asyncio.sleep(5)
