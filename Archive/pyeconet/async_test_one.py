@@ -17,32 +17,38 @@ async def main():
     password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
     api = await EcoNetApiInterface.login(email, password)
     all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+    
     try:
         #r = requests.get(url, auth=HTTPBasicAuth(self.ipaddress, self.username, self.password))
         api = await EcoNetApiInterface.login(email, password=password)
         r = all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
         for equip_list in all_equipment.values():
             for equipment in equip_list:
+                print(str(equip_list))
                 print(f"\nName: {equipment.device_name}\n")
                 print(f"\nSerial #: {equipment.serial_number}\n")
-                print(f"\nOperation mode: {equipment.device_id}\n")
+                print(f"\nDevice ID: {equipment.device_id}\n")
                 print(f"\nSet point: {equipment.set_point}\n")
                 print(f"\nOperation mode: {equipment.mode}\n")
                 print(f"\nOperation modes: {equipment.modes}\n")
-                print(f"\nOperation modes: {equipment.running}\n")
+                print(f"\nRunning ?: {equipment.running}\n")
                 #print(f"\nOperation modes: {equipment.phone_number}\n") #WaterHeaterOperationMode
-                
+                print(type({equipment}))
                 #print(f"\nOperation modes: {equipment}\n") #set_point_limits
                 #print(f"\nOperation modes: {equipment}\n")
-                equipment.set_set_point(equipment._api.publish(int(125), {equipment.device_id}, {equipment.serial_number}))
-                #equipment.set_mode("@RUNNING")
+                #equipment.set_set_point(equipment._api.publish(int(125), {equipment.device_id}, {equipment.serial_number}))
+                #equipment._api.publish("@ENABLED", {equipment.device_id}, {equipment.serial_number})
                 #await asyncio.sleep(300000)
                 print( str(equipment.modes[-1]))  #WaterHeaterOperationMode.GAS #{}".format(var2,var1))
                 print(str(equipment.modes[0])) #WaterHeaterOperationMode.OFF
                 print(str(equipment.modes[::])) #WaterHeaterOperationMode.OFF
                 print( str(equipment.device_id)) #    # "{}".format(var2,var1))
+                #api:["results"]["locations"][0]["equiptments"][0]['@SETPOINT']['value'] = '135'
+                equipment.set_set_point = 135
+                print(equipment.set_point)
 
             return equip_list
+            
         else:
             print.error("Rheem Econet Error:  " + equip_list)
             return None
