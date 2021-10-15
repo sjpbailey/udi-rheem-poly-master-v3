@@ -8,8 +8,8 @@ from requests.auth import HTTPBasicAuth #HTTP
 from pyeconet import EcoNetApiInterface
 from pyeconet.equipment import EquipmentType
 
-logging.basicConfig()
-logging.getLogger().setLevel(logging.DEBUG)
+#logging.basicConfig()
+#logging.getLogger().setLevel(logging.DEBUG)
 
 async def main():
     
@@ -22,9 +22,10 @@ async def main():
         #r = requests.get(url, auth=HTTPBasicAuth(self.ipaddress, self.username, self.password))
         api = await EcoNetApiInterface.login(email, password=password)
         r = all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+        
         for equip_list in all_equipment.values():
             for equipment in equip_list:
-                print(str(equip_list))
+                #print(str(equip_list))
                 print(f"\nName: {equipment.device_name}\n")
                 print(f"\nSerial #: {equipment.serial_number}\n")
                 print(f"\nDevice ID: {equipment.device_id}\n")
@@ -44,7 +45,8 @@ async def main():
                 print(str(equipment.modes[::])) #WaterHeaterOperationMode.OFF
                 print( str(equipment.device_id)) #    # "{}".format(var2,var1))
                 #api:["results"]["locations"][0]["equiptments"][0]['@SETPOINT']['value'] = '135'
-                equipment.set_set_point = 135
+                
+                equipment._api.publish({equipment.set_point}==130, {equipment.device_id}, {equipment.serial_number})
                 print(equipment.set_point)
 
             return equip_list

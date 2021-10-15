@@ -9,8 +9,8 @@ from requests.auth import HTTPBasicAuth #HTTP
 from pyeconet import EcoNetApiInterface
 from pyeconet.equipment import EquipmentType
 
-#logging.basicConfig( ) #format='%(asctime)s %(message)s'
-#logging.getLogger().setLevel(logging.DEBUG)
+logging.basicConfig( ) #format='%(asctime)s %(message)s'
+logging.getLogger().setLevel(logging.DEBUG)
 
 async def main():
     
