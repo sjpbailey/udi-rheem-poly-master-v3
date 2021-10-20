@@ -77,7 +77,7 @@ class Controller(polyinterface.Controller):
         #api.subscribe()
         #await asyncio.sleep(5)"""
         
-                   
+
     async def get_request(self, url):
         try:
             r = requests.get(url, auth=aiohttp.BasicAuth(api = await EcoNetApiInterface.login(self.email, self.password)))
@@ -122,7 +122,7 @@ class Controller(polyinterface.Controller):
         
                     status = "equipment.set_point"
                     self.setdriver('GV1', status)"""
-       
+
         """
         Example
         Do discovery here. Does not have to be called discovery. Called from example
@@ -176,12 +176,12 @@ class Controller(polyinterface.Controller):
 
         # Make sure they are in the params
         self.addCustomParam({'password': self.password, 'email': self.email,
-                             'debug_enable': self.debug_enable})
+                            'debug_enable': self.debug_enable})
 
         # Add a notice if they need to change the email/password from the default.
         if self.email == default_email or self.password == default_password:
             self.addNotice('Please set proper email, password and ISY IP '
-                           'in configuration page, and restart this nodeserver')
+                        'in configuration page, and restart this nodeserver')
             st = False
 
         if st:

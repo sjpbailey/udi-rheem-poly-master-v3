@@ -19,7 +19,7 @@ REST_URL = f"https://{HOST}/api/v/1"
 CLEAR_BLADE_SYSTEM_KEY = "e2e699cb0bb0bbb88fc8858cb5a401"
 CLEAR_BLADE_SYSTEM_SECRET = "E2E699CB0BE6C6FADDB1B0BC9A20"
 HEADERS = {"ClearBlade-SystemKey": CLEAR_BLADE_SYSTEM_KEY, "ClearBlade-SystemSecret": CLEAR_BLADE_SYSTEM_SECRET,
-           "Content-Type": "application/json; charset=UTF-8"}
+        "Content-Type": "application/json; charset=UTF-8"}
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -32,7 +32,7 @@ class EcoNetApiInterface:
     """
 
     def __init__(self, email: str, password: str, account_id: str = None,
-                 user_token: str = None) -> None:
+                user_token: str = None) -> None:
         """
         Create the EcoNet API interface object.
         Args:
@@ -84,7 +84,7 @@ class EcoNetApiInterface:
         self._mqtt_client.username_pw_set(self._user_token, password=CLEAR_BLADE_SYSTEM_KEY)
         self._mqtt_client.enable_logger()
         self._mqtt_client.tls_set(ca_certs=None, certfile=None, keyfile=None, cert_reqs=ssl.CERT_REQUIRED,
-                                  tls_version=ssl.PROTOCOL_TLS, ciphers=None)
+                                tls_version=ssl.PROTOCOL_TLS, ciphers=None)
         self._mqtt_client.on_connect = self._on_connect
         self._mqtt_client.on_message = self._on_message
         self._mqtt_client.on_disconnect = self._on_disconnect
@@ -231,7 +231,7 @@ class EcoNetApiInterface:
                 _equipment.update_equipment_info(unpacked_json)
             else:
                 _LOGGER.debug("Received update for non-existent equipment with device name: %s and serial number %s",
-                              _name, _serial)
+                            _name, _serial)
         except Exception as e:
             _LOGGER.exception(e)
             _LOGGER.error("Failed to parse MQTT message: %s", msg.payload)

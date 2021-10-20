@@ -136,7 +136,7 @@ print(string1["results"]["locations"][0]["@WEATHER_F"]) # Tracy, CA
 print("\n")
 print(string1["results"]["locations"][0]["equiptments"])
 print("\n")
-string1["results"]["locations"][0]["equiptments"][0]['@SETPOINT']['value']=130
+string1["results"]["locations"][0]["equiptments"][0]['@SETPOINT']['value']=137
 print(string1["results"]["locations"][0]["equiptments"][0]['@SETPOINT']['value'] ) # 138 YEAH!!!!!!!!!!!!!!!!!!!!!!
 print("\n")
 print(string1["results"]["locations"][0]["equiptments"][0]["@ENABLED"]['value']) # {'constraints': {'enumText': ['Disabled', 'Enabled'], 'enumTextIcon': ['ic_device_off.png', 'ic_enabled.png'], 'lowerLimit': 0, 'upperLimit': 1}, 'status': 'Enabled', 'value': 1}
