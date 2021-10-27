@@ -37,7 +37,7 @@ async def main():
                 print(type({equipment}))
                 #print(f"\nOperation modes: {equipment}\n") #set_point_limits
                 #print(f"\nOperation modes: {equipment}\n")
-                equipment.set_set_point({0:130}, {equipment.device_id}, {equipment.serial_number})
+                equipment.set_set_point(equipment._api.publish('130', {equipment.device_id}, {equipment.serial_number}))
                 #api.publish(0, {equipment.device_id}, {equipment.serial_number})
                 print(type({equipment.set_point}))
                 #await asyncio.sleep(300000)
@@ -47,7 +47,7 @@ async def main():
                 print( str(equipment.device_id)) #    # "{}".format(var2,var1))
                 #api:["results"]["locations"][0]["equiptments"][0]['@SETPOINT']['value'] = '135'
                 
-                equipment._api.publish({equipment.set_point}, {equipment.device_id}, {equipment.serial_number})
+                #equipment._api.publish({equipment.set_point}, {equipment.device_id}, {equipment.serial_number})
                 print(equipment.set_point)
 
             return equip_list
