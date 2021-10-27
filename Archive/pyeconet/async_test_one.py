@@ -37,7 +37,7 @@ async def main():
                 print(type({equipment}))
                 #print(f"\nOperation modes: {equipment}\n") #set_point_limits
                 #print(f"\nOperation modes: {equipment}\n")
-                #equipment.set_set_point(equipment._api.publish(int(125), {equipment.device_id}, {equipment.serial_number}))
+                equipment.set_set_point({0:130}, {equipment.device_id}, {equipment.serial_number})
                 #api.publish(0, {equipment.device_id}, {equipment.serial_number})
                 print(type({equipment.set_point}))
                 #await asyncio.sleep(300000)
