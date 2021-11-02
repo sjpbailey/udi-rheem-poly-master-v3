@@ -37,7 +37,7 @@ async def main():
                 print(type({equipment}))
                 # print(f"\nOperation modes: {equipment}\n") #set_point_limits
                 # print(f"\nOperation modes: {equipment}\n")
-                equipment.set_set_point(equipment._api.publish('130', {equipment.device_id}, {equipment.serial_number}))
+                equipment.set_set_point(api.publish(130, {equipment.device_id}, {equipment.serial_number}))
                 # api.publish(0, {equipment.device_id}, {equipment.serial_number})
                 print(type({equipment.set_point}))
                 # await asyncio.sleep(300000)
@@ -53,7 +53,7 @@ async def main():
             return equip_list
 
         else:
-            print.error("Rheem Econet Error:  " + equip_list)
+            print.error("Rheem Econet Error:  " + r)
             return None
 
     except Exception as e:
