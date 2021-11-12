@@ -1,12 +1,10 @@
 import asyncio
-import logging
-# import time
-# import getpass
-import requests
-from requests.auth import HTTPBasicAuth  # HTTP
 
 from pyeconet import EcoNetApiInterface
 from pyeconet.equipment import EquipmentType
+
+
+# import getpass
 
 
 # logging.basicConfig()
@@ -34,12 +32,15 @@ async def main():
                 print(f"\nOperation modes: {equipment.modes}\n")
                 print(f"\nRunning ?: {equipment.running}\n")
                 # print(f"\nOperation modes: {equipment.phone_number}\n") #WaterHeaterOperationMode
-                print(type({equipment}))
+                # print(type({equipment}))
                 # print(f"\nOperation modes: {equipment}\n") #set_point_limits
                 # print(f"\nOperation modes: {equipment}\n")
-                equipment.set_set_point(api.publish(130, {equipment.device_id}, {equipment.serial_number}))
+                # equipment.set_set_point(api.publish(130, {equipment.device_id}, {equipment.serial_number}))
                 # api.publish(0, {equipment.device_id}, {equipment.serial_number})
-                print(type({equipment.set_point}))
+                # print(type({equipment.set_point}))
+                a = 137
+                a = str(a)
+                equipment.set_set_point(api.publish(str('@SETPOINT','120'), {equipment.device_id}, {equipment.serial_number}))
                 # await asyncio.sleep(300000)
                 print(str(equipment.modes[-1]))  # WaterHeaterOperationMode.GAS #{}".format(var2,var1))
                 print(str(equipment.modes[0]))  # WaterHeaterOperationMode.OFF
