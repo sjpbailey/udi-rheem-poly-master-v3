@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="772e1779-d256-4c21-8ca7-5d0bf97cc9dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Archive/pyeconet/async_test_one.py" beforeDir="false" afterPath="$PROJECT_DIR$/Archive/pyeconet/async_test_one.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
