@@ -38,9 +38,11 @@ async def main():
                 # equipment.set_set_point(api.publish(130, {equipment.device_id}, {equipment.serial_number}))
                 # api.publish(0, {equipment.device_id}, {equipment.serial_number})
                 # print(type({equipment.set_point}))
+                # speedE2 = 'Speed -' + str(speed)
                 a = 137
                 a = str(a)
-                equipment.set_set_point(api.publish(str('@SETPOINT','120'), {equipment.device_id}, {equipment.serial_number}))
+
+                equipment.set_set_point(api.publish(str("@SETPOINT", "120"), {equipment.device_id}, {equipment.serial_number}))
                 # await asyncio.sleep(300000)
                 print(str(equipment.modes[-1]))  # WaterHeaterOperationMode.GAS #{}".format(var2,var1))
                 print(str(equipment.modes[0]))  # WaterHeaterOperationMode.OFF
