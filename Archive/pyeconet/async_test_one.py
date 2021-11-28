@@ -44,7 +44,7 @@ async def main():
                 a = 137
                 a = str(a)
 
-                equipment.set_set_point(5 + equipment.set_point)
+                equipment.set_set_point(120)
                 # await asyncio.sleep(300000)
                 # WaterHeaterOperationMode.GAS #{}".format(var2,var1))
                 print(str(equipment.modes[-1]))
