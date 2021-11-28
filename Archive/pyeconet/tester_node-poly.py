@@ -21,6 +21,7 @@ async def main():
     api = await EcoNetApiInterface.login(email, password=password)
     # , EquipmentType.THERMOSTAT
     all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+
     # api.subscribe()
     # await asyncio.sleep(5)
     # for equip_list in all_equipment.values():
@@ -33,7 +34,7 @@ async def main():
     #            print("\n{}" .format(equipment.device_name))
     #            print(f"\nName: {equipment.device_name}\n")
     #            print("\n")
-    # 2print("{}" .format(equipment.set_point))
+    #print("{}" .format(equipment.set_point))
     # 3print("{}" .format(equipment.modes))
     # 4print("{}" .format(equipment.device_id))
     # 5print("{}" .format(equipment.serial_number))
@@ -57,9 +58,9 @@ async def main():
         for equipment in equip_list:
             #discover: {'address': 'controller', 'cmd': 'DISCOVER', 'query': {}}
             # dict_values([[<pyeconet.equipment.water_heater.WaterHeater object at 0x10d4ed410>]])
-            equipment.set_set_point(125)
+            # equipment.set_set_point()
             print(f"\nName: {equipment.device_name}\n")
-            print("{}" .format(equipment.set_point))
+            print("{}" .format(equipment.set_set_point))
             print(f"\nOperation mode: {equipment.modes[0]}\n")
 
             # payload = json.loads(equipment.set_set_point + 1) #payload = 140
