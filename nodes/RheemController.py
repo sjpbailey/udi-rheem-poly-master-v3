@@ -49,7 +49,7 @@ class RheemController(udi_interface.Node):
 
     def discover(self, *args, **kwargs):
         self.poly.addNode(RheemNode(self.poly, self.address,
-                          'rheemnodeid', 'Water Heater', self.email, self.password))
+                                    'rheemnodeid', 'Water Heater', self.email, self.password))
 
     def delete(self):
         LOGGER.info('deleted.')

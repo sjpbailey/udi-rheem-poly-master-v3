@@ -64,11 +64,14 @@ async def main():
             print(f"\nOperation mode: {equipment.modes[0]}\n")
 
             # payload = json.loads(equipment.set_set_point + 1) #payload = 140
-            #self._mqtt_client.publish(f"user/{self._account_id}/device/desired", payload=json.dumps(publish_payload))
+            # _mqtt_client.publish(
+            #    f"user/{self._account_id}/device/desired", payload=json.dumps(publish_payload))
             # AttributeError: 'NoneType' object has no attribute 'publish'
-            #payload=json.dumps({"@SETPOINT": equipment.set_point+2})
-            # equipment.set_set_point(payload)
-            # equipment.set_set_point(payload)
+            # equipment.set_set_point(equipment.set_set_point(135),
+            #                        'device_id', 'serial_number')
+            payload = json.dumps({"@SETPOINT": equipment.set_point+2})
+
+            equipment.set_set_point(equipment.set_point(payload))
             # print(json.dump)
             #print(all_equipment,{equipment.device_name}, {equipment.set_point==130})
             # print(pyeconet.api)
