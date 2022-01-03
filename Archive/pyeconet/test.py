@@ -20,6 +20,7 @@ async def main():
     all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
     # api.subscribe()
     # await asyncio.sleep(5)
+    print(all_equipment)
     for equip_list in all_equipment.values():
         for equipment in equip_list:
             print(f"\nName: {equipment.device_name}\n")
