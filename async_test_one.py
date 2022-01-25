@@ -65,7 +65,7 @@ async def main():
 
             return equip_list
         else:
-            print.error("Rheem Econet Error:  " + equip_list)
+            print.error("Rheem Econet Error:  ")
             return None
 
     except Exception as e:

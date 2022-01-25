@@ -5,7 +5,7 @@ import logging
 
 from pyeconet import EcoNetApiInterface
 from pyeconet.equipment import EquipmentType
-#from pyeconet.equipment.water_heater import WaterHeaterOperationMode
+from pyeconet.equipment.water_heater import WaterHeaterOperationMode
 
 # logging.basicConfig()
 # logging.getLogger().setLevel(logging.DEBUG)
@@ -20,9 +20,23 @@ async def main():
     all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
     # api.subscribe()
     # await asyncio.sleep(5)
-    print(all_equipment)
+    # print(all_equipment)
+    max_temp = None
     for equip_list in all_equipment.values():
         for equipment in equip_list:
+            equipment.min_temp = 85
+            equipment.max_temp = 130
+            equipment.set_set_point = 130
+            # equipment.set_set_point(equipment._api.publish(str(
+            # equipment.max_temp == 135, equipment.device_id, equipment.serial_number)))
+            # equipment.set_set_point(equipment._api.publish) 135
+            equipment.operation_mode = False
+            print(equipment.max_temp)
+            print(equipment.min_temp)
+            print(equipment.set_point)
+            print(equipment.energy_usage)
+
+            #["results"]["locations"][0]["equiptments"][0]['@SETPOINT']['value'] = 137
             print(f"\nName: {equipment.device_name}\n")
             print(
                 f"\nSet point: {equipment.set_point} {equipment.set_set_point}\n")

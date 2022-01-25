@@ -4,37 +4,41 @@ import logging
 #import getpass
 import json
 import requests
-from requests.auth import HTTPBasicAuth #HTTP
+from requests.auth import HTTPBasicAuth  # HTTP
 
 from pyeconet import EcoNetApiInterface
 from pyeconet.equipment import EquipmentType
 
-logging.basicConfig( ) #format='%(asctime)s %(message)s'
+# logging.basicConfig()  # format='%(asctime)s %(message)s'
 logging.getLogger().setLevel(logging.DEBUG)
 
+
 async def main():
-    
-    email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
-    password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
+
+    email = "sjpbailey@comcast.net"  # input("Enter your email: ").strip()
+    # getpass.getpass(prompt='Enter your password: ')
+    password = "NatiqueRheem61"
     api = await EcoNetApiInterface.login(email, password)
     all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
-    
-    #print([EquipmentType.WATER_HEATER]) #[<EquipmentType.WATER_HEATER: 1>] so if greater than 2 addNode water heater
-    
+
+    # print([EquipmentType.WATER_HEATER]) #[<EquipmentType.WATER_HEATER: 1>] so if greater than 2 addNode water heater
+
     try:
         #r = requests.get(url, auth=HTTPBasicAuth(self.ipaddress, self.username, self.password))
+        account_id = None
         api = await EcoNetApiInterface.login(email, password=password)
         r = all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+        print([api][account_id])
         for equip_list in all_equipment.values():
             for equipment in equip_list:
-                print(equipment.set_point==140)
+                print(equipment.set_point == 140)
                 #equipment.set_mode(equipment._api.publish("{}" "{}" .format(1), {equipment.device_id}, {equipment.serial_number}))
-                
-                #print({"results"})
+                #equipment["results"]["locations"][0]["equiptments"][0]['@SETPOINT']['value'] = 137
+                # print({"results"})
                 #equipment.set_set_point(equipment._api.publish(equipment.set_point ==85, {equipment.device_id}, {equipment.serial_number}))
-                #print(f"\nActive: {equipment.location}\n") #Active: True
-                #print(f"\nTests: {equipment} \n") # tanklessWaterHeater
-                #print([0]["locations"][0]["@LOCATION_INFO"])
+                # print(f"\nActive: {equipment.location}\n") #Active: True
+                # print(f"\nTests: {equipment} \n") # tanklessWaterHeater
+                # print([0]["locations"][0]["@LOCATION_INFO"])
                 """
                 print(equip_list) # [<pyeconet.equipment.water_heater.WaterHeater object at 0x109154350>]
                 print(f"\nActive: {equipment.active}\n") #Active: True
@@ -54,10 +58,10 @@ async def main():
                 print("{}" .format(equipment.set_point ==138)) # True if equal to current setpoint
                 print(f"\nSet Set point: {equipment.set_set_point}\n") # Set Set point: <bound method WaterHeater.set_set_point of <pyeconet.equipment.water_heater.WaterHeater object at 0x109154350>>
                 """
-                
+
             return equip_list
         else:
-            print.error("Rheem Econet Error:  " + equip_list)
+            print.error("Rheem Econet Error:  ")
             return None
 
     except Exception as e:
@@ -65,5 +69,4 @@ async def main():
 
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(main())   
-
+    loop.run_until_complete(main())
