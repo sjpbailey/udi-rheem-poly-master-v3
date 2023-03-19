@@ -1,0 +1,38 @@
+<nodeDefs>
+    <!-- NODE DEF from 5.0 document http://wiki.universal-devices.com/index.php?title=V50_MAIN -->
+    <!-- controller, this must mach the id in your Controller class-->
+    <nodeDef id="controller" nls="ctl">
+        <editors />
+        <sts>
+		<st id="ST" editor="bool" />
+	</sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="QUERY" />
+                <cmd id="DISCOVER" />
+                <cmd id="REMOVE_NOTICES_ALL" />
+            </accepts>
+        </cmds>
+    </nodeDef>
+	<!-- templatenodeid -->
+    <nodeDef id="rheemnodeid" nls="rheemnode">
+        <editors />
+        <sts>
+            <st id="GV1" editor="deg_f" />
+            <st id="GV2" editor="MODE" />
+            <!--<st id="GV3" editor="RAWVAL" />
+            <st id="GV4" editor="MODE" />
+            <st id="GV5" editor="RAWVAL" />-->
+            <st id="GV6" editor="bool" />
+            <!--<st id="ST" editor="bool" />-->
+        </sts>
+        <cmds>
+            <sends />
+            <accepts>
+                <cmd id="QUERY" />
+                <cmd id="GONOW" />
+            </accepts>
+        </cmds>
+    </nodeDef>
+</nodeDefs>

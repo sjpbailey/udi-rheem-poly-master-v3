@@ -1,0 +1,49 @@
+
+# controller
+ND-controller-NAME = Template NodeServer Controller
+ND-controller-ICON = GenericRspCtl
+CMD-ctl-QUERY-NAME = Query
+CMD-ctl-DISCOVER-NAME = Re-Discover
+CMD-ctl-UPDATE_PROFILE-NAME = Update Profile
+CMD-ctl-REMOVE_NOTICES_ALL-NAME = Remove All Notices
+CMD-ctl-SET_DM-NAME = Set Logger Level
+ST-ctl-ST-NAME = NodeServer Online
+
+# Debug/Logger Modes
+CDM-9 = Debug + Modules
+CDM-10 = Debug
+CDM-20 = Info
+CDM-30 = Warning
+CDM-40 = Error
+CDM-50 = Critical
+
+# mynodetype
+ND-rheemnodeid-NAME = Template Node
+ND-rheemnodeid-ICON = Energy monitor
+ST-rheemnode-ST-NAME = Node Status
+ST-rheemnode-GV1-NAME = Setpoint
+ST-rheemnode-GV2-NAME = Mode
+ST-rheemnode-GV3-NAME = Serial Number
+ST-rheemnode-GV4-NAME = Modes
+ST-rheemnode-GV5-NAME = Device ID
+ST-rheemnode-GV6-NAME = Enabled
+
+CMD-rheemnode-GONOW-NAME = Poll
+CMD-rheemnode-QUERY-NAME = Query
+
+#CMD-rheemnode-DON-NAME = On
+#CMD-rheemnode-DOF-NAME = Off
+
+STS-0 = DOWN
+STS-1 = OFF
+STS-2 = ELECTRIC_MODE
+STS-3 = ENERGY_SAVINGS
+STS-4 = HEAT_PUMP_ONLY
+STS-5 = HIGH_DEMAND
+STS-6 = GAS
+STS-7 = ENERGY_SAVER
+STS-8 = PERFORMANCE
+STS-9 = VACATION
+STS-10 = ELECTRIC
+STS-11 = HEAT_PUMP
+STS-99 = UNKNOWN
