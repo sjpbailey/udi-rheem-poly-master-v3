@@ -1,15 +1,5 @@
 # Rheem Tankless
 
-The purpose of this Nodeserver is simply to display/report device/node inventory within
-the ISY.
-
-* Supported Nodes
-  * Total Nodes
-  * Scenes
-  * Insteon
-  * Z-Wave
-  * NodeServer Nodes
-
 ## Configuration
 
 ### Defaults
