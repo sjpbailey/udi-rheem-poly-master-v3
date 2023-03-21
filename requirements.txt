@@ -1,5 +1,5 @@
-udi_interface>=3.0.11
-pyeconet>=0.1.14
+udi_interface>=3.0.55
+pyeconet>=0.1.18
 asyncio>=3.4.3
-requests>=2.26.0
+requests>=2.28.2
 
