@@ -94,6 +94,8 @@ class RheemNode(udi_interface.Node):
             for equip_list in all_equipment.values():
                 for equipment in equip_list:
                     equipment.set_mode(1)
+                    if equipment.enabled == False:
+                        self.setDriver('GV6', 0)
                     
     # Stop Power Down Heater
     async def onHeat(self, command):
@@ -104,6 +106,8 @@ class RheemNode(udi_interface.Node):
             for equip_list in all_equipment.values():
                 for equipment in equip_list:
                     equipment.set_mode(6)
+                    if equipment.enabled == True:
+                        self.setDriver('GV6', 1)
         
 
     def poll(self, polltype):
