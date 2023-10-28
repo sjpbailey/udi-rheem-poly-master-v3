@@ -124,7 +124,7 @@ class RheemNode(udi_interface.Node):
         #self.reportDrivers()
         
     def goSet(self, command):
-        asyncio.run(self.setTemp())
+        asyncio.run(self.setTemp(self))
     
     def query(self,command=None):
         self.reportDrivers()
