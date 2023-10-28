@@ -107,8 +107,6 @@ class RheemNode(udi_interface.Node):
                         
             except Exception as e:
                 LOGGER.info("Error: " + str(e))
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(set_percent)
 
     def poll(self, polltype):
         if 'shortPoll' in polltype:
@@ -123,8 +121,11 @@ class RheemNode(udi_interface.Node):
     def goNow(self, command):
         #LOGGER.debug("Query sensor {}".format(self.address))
         asyncio.run(self.getInformed())
-        #self.reportDrivers()     
-
+        #self.reportDrivers()
+        
+    def goSet(self, command):
+        asyncio.run(self.setTemp())
+    
     def query(self,command=None):
         self.reportDrivers()
 
@@ -143,6 +144,6 @@ class RheemNode(udi_interface.Node):
 
     commands = {
                     'GONOW': goNow,
-                    'SETPT': setTemp,
+                    'SETPT': goSet,
                     
                 }
