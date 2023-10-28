@@ -97,7 +97,7 @@ class RheemNode(udi_interface.Node):
             all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
             for equip_list in all_equipment.values():
                 for equipment in equip_list:
-                    equipment.set_set_point(percent)
+                    equipment.set_set_point(130)
                     LOGGER.info("{}" .format(equipment.set_point))
                     self.setDriver('GV7', percent)
                     LOGGER.info('Setpoint = ' + str(percent) + ' Level')
