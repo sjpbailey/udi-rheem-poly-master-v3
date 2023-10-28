@@ -31,8 +31,8 @@ ST-rheemnode-GV6-NAME = Enabled
 
 CMD-rheemnode-SETPT-NAME = SetPoint Command
 CMD-rheemnode-QUERY-NAME = Driver Info
-CMD-rheemnode-STOP-NAME = Stop
-CMD-rheemnode-START-NAME = Start
+CMD-rheemnode-STOP-NAME = Disable
+CMD-rheemnode-START-NAME = Enable
 
 #CMD-rheemnode-GONOW-NAME = API Info
 
