@@ -105,6 +105,7 @@ class RheemNode(udi_interface.Node):
                         self.setDriver('GV7', percent)
                         LOGGER.info('Setpoint = ' + str(percent) + ' Level')
                         LOGGER.info('GV7')
+                        self.goNow(self)
 
     def poll(self, polltype):
         if 'shortPoll' in polltype:
