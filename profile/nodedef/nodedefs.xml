@@ -19,9 +19,9 @@
     <nodeDef id="rheemnode" nls="rheemnode">
         <editors />
         <sts>
+            <st id="GV2" editor="MODE" />
             <st id="GV1" editor="deg_f" />
             <st id="GV7" editor="LEVEL" />
-            <st id="GV2" editor="MODE" />
             <!--st id="GV3" editor="RAWVAL" /-->
             <!--st id="GV4" editor="MODE" />
             <st id="GV5" editor="RAWVAL" -->
