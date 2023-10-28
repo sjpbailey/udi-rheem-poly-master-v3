@@ -30,8 +30,8 @@ ST-rheemnode-GV6-NAME = Enabled
 ST-rheemnode-GV7-NAME = CMD SETPT
 
 CMD-rheemnode-SETPT-NAME = Set Point
-CMD-rheemnode-GONOW-NAME = Poll
-CMD-rheemnode-QUERY-NAME = Query
+CMD-rheemnode-GONOW-NAME = API Info
+CMD-rheemnode-QUERY-NAME = Driver Info
 
 #CMD-rheemnode-DON-NAME = On
 #CMD-rheemnode-DOF-NAME = Off

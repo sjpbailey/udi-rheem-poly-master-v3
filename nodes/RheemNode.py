@@ -98,7 +98,7 @@ class RheemNode(udi_interface.Node):
             #api.subscribe()
             for equip_list in all_equipment.values():
                 for equipment in equip_list:
-                    equipment.set_set_point(115)
+                    equipment.set_set_point(140)
 
                 return equip_list
             else:
@@ -144,5 +144,6 @@ class RheemNode(udi_interface.Node):
     commands = {
                     'GONOW': goNow,
                     'SETPT': setTemp,
+                    'QUERY': query,
                     
                 }
