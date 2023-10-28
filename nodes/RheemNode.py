@@ -84,7 +84,7 @@ class RheemNode(udi_interface.Node):
             LOGGER.info("Error: " + str(e))
 
     # Temperature Setpoint
-    def setTemp(self, command):
+    async def setTemp(self, command):
         ivr_one = 'percent'
         percent = int(command.get('value'))
 
@@ -93,8 +93,8 @@ class RheemNode(udi_interface.Node):
         if percent < 110 or percent > 140:
             LOGGER.error('Invalid Level {}'.format(percent))
         else:
-            api = EcoNetApiInterface.login(self.email, self.password)
-            all_equipment = api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+            api = await EcoNetApiInterface.login(self.email, self.password)
+            all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
             for equip_list in all_equipment.values():
                 for equipment in equip_list:
                     equipment.set_set_point(percent)
