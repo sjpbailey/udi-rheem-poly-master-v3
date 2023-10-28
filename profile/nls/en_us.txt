@@ -30,7 +30,7 @@ ST-rheemnode-GV6-NAME = Enabled
 ST-rheemnode-GV7-NAME = SetPoint Heater
 
 CMD-rheemnode-SETPT-NAME = SetPoint Command
-CMD-rheemnode-GONOW-NAME = API Info
+#CMD-rheemnode-GONOW-NAME = API Info
 CMD-rheemnode-QUERY-NAME = Driver Info
 
 #CMD-rheemnode-DON-NAME = On

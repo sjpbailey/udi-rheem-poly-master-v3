@@ -40,7 +40,7 @@ class RheemNode(udi_interface.Node):
         self.password = password
 
     def start(self):
-        self.goSet()
+        self.query()
         self.http = urllib3.PoolManager()
 
     # Temperature Setpoint Statuses

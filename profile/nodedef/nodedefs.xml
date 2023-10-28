@@ -32,7 +32,7 @@
             <sends />
             <accepts>
                 <cmd id="QUERY" />
-                <cmd id="GONOW" />
+                <!--cmd id="GONOW" /-->
                 
                 <cmd id="SETPT">
                     <p id="" editor="LEVEL" init="GV7" />
