@@ -67,7 +67,8 @@ class RheemNode(udi_interface.Node):
         all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
         try:
             api = await EcoNetApiInterface.login(self.email, password=self.password)
-            r = all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+            all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+            api.subscribe()
             for equip_list in all_equipment.values():
                 for equipment in equip_list:
                     LOGGER.info(f"\nName: {equipment.device_name}\n")
@@ -94,10 +95,10 @@ class RheemNode(udi_interface.Node):
                         self.setDriver('GV6', 1)
                     else:
                         self.setDriver('GV6', 0)
-            api.subscribe()
+            #api.subscribe()
             for equip_list in all_equipment.values():
                 for equipment in equip_list:
-                    equipment.set_set_point(123)
+                    equipment.set_set_point(115)
 
                 return equip_list
             else:
