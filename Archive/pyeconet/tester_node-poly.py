@@ -2,7 +2,7 @@ import asyncio
 import logging
 import aiohttp
 import json
-#import time
+import time
 #import getpass
 
 from pyeconet import EcoNetApiInterface
@@ -24,7 +24,7 @@ async def main():
 
     api.subscribe()
     await asyncio.sleep(5)
-    for equip_list in all_equipment.values():
+    """for equip_list in all_equipment.values():
         for equipment in equip_list:
             discover: {'address': 'controller', 'cmd': 'DISCOVER', 'query': {}}
             print("{}" .format(equipment.set_point))
@@ -34,7 +34,7 @@ async def main():
             print("{}" .format(equipment.serial_number))
             print("{}" .format(equipment.mode))
             #print("{}" .format(all_equipment.values))
-            print("{}" .format(equipment.enabled))
+            print("{}" .format(equipment.enabled))"""
     
     for equip_list in all_equipment.values():
         for equipment in equip_list:
@@ -44,9 +44,18 @@ async def main():
             print(f"\nName: {equipment.device_name}\n")
             print("{}" .format(equipment.set_set_point))
             print(f"\nOperation mode: {equipment.modes[0]}\n")
-            #equipment.set_set_point(125)
+            
             print("{}" .format(equipment.set_point))
-            equipment.set_mode(9)
+            #time.sleep(10)
+            #equipment.set_mode(1)
+            #time.sleep(10)
+            equipment.set_mode(1)
+            #time.sleep(3)
+            #equipment.set_set_point(140)
+            #time.sleep(10)
+            #equipment.set_set_point(120)
+            #equipment.set_away_mode(False)
+            #print(equipment.get_energy_usage)
             # print(json.dump)
             #print(all_equipment,{equipment.device_name}, {equipment.set_point==130})
             # print(pyeconet.api)

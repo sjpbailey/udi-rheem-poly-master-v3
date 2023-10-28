@@ -18,15 +18,15 @@ async def main():
     api = await EcoNetApiInterface.login(email, password=password)
     # , EquipmentType.THERMOSTAT
     all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
-    # api.subscribe()
-    # await asyncio.sleep(5)
+    api.subscribe()
+    await asyncio.sleep(5)
     # print(all_equipment)
     max_temp = None
     for equip_list in all_equipment.values():
         for equipment in equip_list:
-            equipment.min_temp = 85
-            equipment.max_temp = 130
-            equipment.set_set_point = 130
+            #equipment.min_temp(85)
+            #equipment.max_temp(130)
+            equipment.set_set_point(125)
             # equipment.set_set_point(equipment._api.publish(str(
             # equipment.max_temp == 135, equipment.device_id, equipment.serial_number)))
             equipment.set_set_point(140)

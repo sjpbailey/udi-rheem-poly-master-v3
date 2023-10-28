@@ -83,10 +83,8 @@ class RheemNode(udi_interface.Node):
                         self.setDriver('GV6', 1)
                     if equipment.enabled == False:
                         self.setDriver('GV6', 0)
-                    
-        
-        return percent
-        LOGGER.info(percent)
+                        
+
 
     def poll(self, polltype):
         if 'shortPoll' in polltype:

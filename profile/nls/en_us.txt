@@ -29,10 +29,9 @@ ST-rheemnode-GV2-NAME = Mode
 #ST-rheemnode-GV5-NAME = Device ID
 ST-rheemnode-GV6-NAME = Enabled
 
-
 CMD-rheemnode-SETPT-NAME = SetPoint Command
-#CMD-rheemnode-GONOW-NAME = API Info
 CMD-rheemnode-QUERY-NAME = Driver Info
+#CMD-rheemnode-GONOW-NAME = API Info
 
 #CMD-rheemnode-DON-NAME = On
 #CMD-rheemnode-DOF-NAME = Off
