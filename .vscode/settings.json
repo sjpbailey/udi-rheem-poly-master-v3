@@ -3,6 +3,7 @@
         "GONOW",
         "pyeconet",
         "Rheem",
-        "rheemnode"
+        "rheemnode",
+        "SETPT"
     ]
 }

@@ -83,6 +83,28 @@ class RheemNode(udi_interface.Node):
         except Exception as e:
             LOGGER.info("Error: " + str(e))
 
+    # Temperature Setpoint
+    def setTemp(self, command):
+        ivr_one = 'percent'
+        percent = int(command.get('value'))
+
+        def set_percent(self, command):
+            percent = int(command.get('value')*10)
+        if percent < 110 or percent > 140:
+            LOGGER.error('Invalid Level {}'.format(percent))
+        else:
+            async def getInformed(self):
+                api = await EcoNetApiInterface.login(self.email, self.password)
+                all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+                api = await EcoNetApiInterface.login(self.email, password=self.password)
+                r = all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+                for equip_list in all_equipment.values():
+                    for equipment in equip_list:
+                        equipment.set_set_point(percent)
+                        LOGGER.info("{}" .format(equipment.set_point))
+                        self.setDriver('GV7', percent)
+                        LOGGER.info('Setpoint = ' + str(percent) + ' Level')
+
     def poll(self, polltype):
         if 'shortPoll' in polltype:
             LOGGER.debug('shortPoll (node)')
@@ -109,11 +131,13 @@ class RheemNode(udi_interface.Node):
         {'driver': 'GV4', 'value': 0, 'uom': 25, 'name': 'Modes'},
         {'driver': 'GV5', 'value': 0, 'uom': 56, 'name': 'ID'},
         {'driver': 'GV6', 'value': True, 'uom': 2, 'name': 'Enabled?'},
+        {'driver': 'GV7', 'value': 0, 'uom': 17, 'name': 'Setpoint CMD'},
         ]
 
     id = 'rheemnode'
 
     commands = {
-                    'GONOW': goNow
+                    'GONOW': goNow,
+                    'SETPT': setTemp,
                     
                 }

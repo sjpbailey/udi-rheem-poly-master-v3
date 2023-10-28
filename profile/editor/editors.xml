@@ -3,7 +3,7 @@
 	<editor id="bool">
 		<range uom="2" subset="0,1" />
 	</editor>
-
+    
 	<editor id="MODE">
         <range uom="25" subset="0-100" nls="STS"/>
     </editor>
@@ -15,8 +15,13 @@
 	<editor id="deg_f">
 		<range uom="17" min="-10000" max="10000" prec="0" /> 
 	</editor>
-
+    
 	<editor id="SERIAL_1">
         <range uom="56" min="0" max="10000000000000000" prec="0" />
     </editor>
+    
+    <editor id="LEVEL">
+        <range uom="51" min="110" max="140" step="1" prec="0"/>
+    </editor>
+
 </editors>

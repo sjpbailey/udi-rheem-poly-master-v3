@@ -21,13 +21,14 @@ CDM-50 = Critical
 ND-rheemnode-NAME = Template Node
 ND-rheemnode-ICON = Energy monitor
 ST-rheemnode-ST-NAME = Node Status
-ST-rheemnode-GV1-NAME = Setpoint
+ST-rheemnode-GV1-NAME = Current Setpoint
 ST-rheemnode-GV2-NAME = Mode
 ST-rheemnode-GV3-NAME = Serial Number
 ST-rheemnode-GV4-NAME = Modes
 ST-rheemnode-GV5-NAME = Device ID
 ST-rheemnode-GV6-NAME = Enabled
 
+CMD-rheemnode-SETPT-NAME = Set Point
 CMD-rheemnode-GONOW-NAME = Poll
 CMD-rheemnode-QUERY-NAME = Query
 

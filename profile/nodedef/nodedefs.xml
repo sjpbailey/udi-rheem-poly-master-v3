@@ -32,6 +32,11 @@
             <accepts>
                 <cmd id="QUERY" />
                 <cmd id="GONOW" />
+                
+                <cmd id="SETPT">
+                    <p id="" editor="LEVEL" init="GV3" />
+                </cmd>
+
             </accepts>
         </cmds>
     </nodeDef>
