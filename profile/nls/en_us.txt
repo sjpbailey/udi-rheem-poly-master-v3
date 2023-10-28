@@ -27,9 +27,9 @@ ST-rheemnode-GV3-NAME = Serial Number
 ST-rheemnode-GV4-NAME = Modes
 ST-rheemnode-GV5-NAME = Device ID
 ST-rheemnode-GV6-NAME = Enabled
-ST-rheemnode-GV7-NAME = CMD SETPT
+ST-rheemnode-GV7-NAME = SetPoint Heater
 
-CMD-rheemnode-SETPT-NAME = Set Point
+CMD-rheemnode-SETPT-NAME = SetPoint Command
 CMD-rheemnode-GONOW-NAME = API Info
 CMD-rheemnode-QUERY-NAME = Driver Info
 
