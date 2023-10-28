@@ -104,7 +104,7 @@ class RheemNode(udi_interface.Node):
                         LOGGER.info("{}" .format(equipment.set_point))
                         self.setDriver('GV7', percent)
                         LOGGER.info('Setpoint = ' + str(percent) + ' Level')
-                        LOGGER.info('GV7')
+                        
             except Exception as e:
                 LOGGER.info("Error: " + str(e))
         loop = asyncio.get_event_loop()
