@@ -101,6 +101,7 @@ class RheemNode(udi_interface.Node):
                     LOGGER.info("{}" .format(equipment.set_point))
                     self.setDriver('GV7', percent)
                     LOGGER.info('Setpoint = ' + str(percent) + ' Level')
+        asyncio.run()
 
     def poll(self, polltype):
         if 'shortPoll' in polltype:
