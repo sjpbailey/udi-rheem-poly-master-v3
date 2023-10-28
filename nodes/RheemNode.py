@@ -40,7 +40,7 @@ class RheemNode(udi_interface.Node):
         self.password = password
 
     def start(self):
-        self.setTemp(self)
+        self.goSet(self)
         self.http = urllib3.PoolManager()
 
     # Temperature Setpoint
@@ -65,7 +65,7 @@ class RheemNode(udi_interface.Node):
                     LOGGER.info(f"\nName: {equipment.device_name}\n")
                     #equipment.set_set_point(137)
                     LOGGER.info(f"\nSet point: {equipment.set_point}\n")
-                    self.setDriver('GV1', str(f"{equipment.set_point}"))
+                    #self.setDriver('GV1', str(f"{equipment.set_point}"))
                     #LOGGER.info(f"\nDriver GV7:" 'GV7')
                     
                     LOGGER.info(f"\nOperation mode: {equipment.mode.value}\n")  # Operation mode: WaterHeaterOperationMode.GAS
