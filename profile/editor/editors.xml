@@ -17,7 +17,7 @@
 	</editor>
     
 	<editor id="SERIAL_1">
-        <range uom="56" min="0" max="10000000000000000" prec="0" />
+        <range uom="56" min="0" max="999999999999999999999" prec="0" />
     </editor>
     
     <editor id="LEVEL">
