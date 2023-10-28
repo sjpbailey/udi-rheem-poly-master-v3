@@ -44,7 +44,7 @@ class RheemNode(udi_interface.Node):
         self.http = urllib3.PoolManager()
 
     # Temperature Setpoint
-    def setTemp(self, command):
+    async def setTemp(self, command):
         ivr_one = 'percent'
         percent = int(command.get('value'))
 
@@ -54,7 +54,15 @@ class RheemNode(udi_interface.Node):
             LOGGER.error('Invalid Level {}'.format(percent))
         else:
             self.setDriver('GV7', percent)
-            asyncio.run(self.getInformed())
+            api = await EcoNetApiInterface.login(self.email, self.password)
+            all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+            api.subscribe()
+            await asyncio.sleep(5)
+            for equip_list in all_equipment.values():
+                for equipment in equip_list:
+                    equipment.set_set_point(percent)
+                    LOGGER.info("{}" .format(equipment.set_point))
+                    #asyncio.run(self.getInformed())
         
         return percent
         LOGGER.info(percent)
