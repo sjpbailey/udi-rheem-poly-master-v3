@@ -72,6 +72,7 @@ class RheemNode(udi_interface.Node):
             for equip_list in all_equipment.values():
                 for equipment in equip_list:
                     LOGGER.info(f"\nName: {equipment.device_name}\n")
+                    equipment.set_set_point(137)
                     LOGGER.info(f"\nSet point: {equipment.set_point}\n")
                     self.setDriver('GV1', str(f"{equipment.set_point}"))
                     #LOGGER.info(f"\nDriver GV7:" 'GV7')
@@ -95,10 +96,6 @@ class RheemNode(udi_interface.Node):
                         self.setDriver('GV6', 1)
                     else:
                         self.setDriver('GV6', 0)
-            #api.subscribe()
-            for equip_list in all_equipment.values():
-                for equipment in equip_list:
-                    equipment.set_set_point(140)
 
                 return equip_list
             else:
@@ -136,7 +133,7 @@ class RheemNode(udi_interface.Node):
         {'driver': 'GV4', 'value': 0, 'uom': 25, 'name': 'Modes'},
         {'driver': 'GV5', 'value': 0, 'uom': 56, 'name': 'ID'},
         {'driver': 'GV6', 'value': True, 'uom': 2, 'name': 'Enabled?'},
-        {'driver': 'GV7', 'value': 110, 'uom': 17, 'name': 'Setpoint CMD'},
+        {'driver': 'GV7', 'value': 0, 'uom': 17, 'name': 'Setpoint CMD'},
         ]
 
     id = 'rheemnode'
