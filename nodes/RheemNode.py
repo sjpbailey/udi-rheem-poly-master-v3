@@ -88,7 +88,7 @@ class RheemNode(udi_interface.Node):
         ivr_one = 'percent'
         percent = int(command.get('value'))
 
-        async def set_percent(self, command):
+        def set_percent(self, command):
             percent = int(command.get('value')*10)
         if percent < 110 or percent > 140:
             LOGGER.error('Invalid Level {}'.format(percent))
