@@ -93,18 +93,18 @@ class RheemNode(udi_interface.Node):
         if percent < 110 or percent > 140:
             LOGGER.error('Invalid Level {}'.format(percent))
         else:
-            #async def getInformed(self):
-            api = EcoNetApiInterface.login(self.email, self.password)
-            all_equipment = api.get_equipment_by_type([EquipmentType.WATER_HEATER])
-            api = EcoNetApiInterface.login(self.email, password=self.password)
-            r = all_equipment = api.get_equipment_by_type([EquipmentType.WATER_HEATER])
-            for equip_list in all_equipment.values():
-                for equipment in equip_list:
-                    equipment.set_set_point(percent)
-                    LOGGER.info("{}" .format(equipment.set_point))
-                    self.setDriver('GV7', percent)
-                    LOGGER.info('Setpoint = ' + str(percent) + ' Level')
-                    LOGGER.info('GV7')
+            async def getInformed(self):
+                api = await EcoNetApiInterface.login(self.email, self.password)
+                all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+                api = await EcoNetApiInterface.login(self.email, password=self.password)
+                r = all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+                for equip_list in all_equipment.values():
+                    for equipment in equip_list:
+                        equipment.set_set_point(percent)
+                        LOGGER.info("{}" .format(equipment.set_point))
+                        self.setDriver('GV7', percent)
+                        LOGGER.info('Setpoint = ' + str(percent) + ' Level')
+                        LOGGER.info('GV7')
 
     def poll(self, polltype):
         if 'shortPoll' in polltype:
