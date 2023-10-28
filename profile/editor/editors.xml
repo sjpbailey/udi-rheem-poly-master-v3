@@ -21,7 +21,7 @@
     </editor>
     
     <editor id="LEVEL">
-        <range uom="51" min="110" max="140" step="1" prec="0"/>
+        <range uom="17" min="110" max="140" step="1" prec="0"/>
     </editor>
 
 </editors>

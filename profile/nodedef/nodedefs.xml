@@ -34,7 +34,7 @@
                 <cmd id="GONOW" />
                 
                 <cmd id="SETPT">
-                    <p id="" editor="LEVEL" init="GV3" />
+                    <p id="" editor="LEVEL" init="GV7" />
                 </cmd>
 
             </accepts>
