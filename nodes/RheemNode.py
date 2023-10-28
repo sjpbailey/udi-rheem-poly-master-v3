@@ -62,14 +62,38 @@ class RheemNode(udi_interface.Node):
                 for equipment in equip_list:
                     equipment.set_set_point(percent)
                     LOGGER.info("{}" .format(equipment.set_point))
-                    asyncio.run(self.getInformed())
+                    LOGGER.info(f"\nName: {equipment.device_name}\n")
+                    #equipment.set_set_point(137)
+                    LOGGER.info(f"\nSet point: {equipment.set_point}\n")
+                    self.setDriver('GV1', str(f"{equipment.set_point}"))
+                    #LOGGER.info(f"\nDriver GV7:" 'GV7')
+                    
+                    LOGGER.info(f"\nOperation mode: {equipment.mode.value}\n")  # Operation mode: WaterHeaterOperationMode.GAS
+                    self.setDriver('GV2', int(f"{equipment.mode.value}"))
+
+                    LOGGER.info(f"\nSerial #: {equipment.serial_number}\n")
+                    self.setDriver('GV3', str(f"{equipment.serial_number}"))
+                    
+                    LOGGER.info(f"\nOperation modes: {equipment.modes}\n")  # Operation modes: [<WaterHeaterOperationMode.OFF: 1>, <WaterHeaterOperationMode.GAS: 6>]
+                    self.setDriver('GV4', str(f"{equipment.modes}"))
+                    
+                    #LOGGER.info("{}" .format(f"{equipment.set_point}"))
+                    
+                    LOGGER.info(f"\nDevice Id: {equipment.device_id}\n")
+                    self.setDriver('GV5', str(f"{equipment.device_id}"))
+
+                    LOGGER.info(f"\nEnabled: {equipment.enabled}\n")
+                    if str(f"{equipment.enabled}") == 1:
+                        self.setDriver('GV6', 1)
+                    else:
+                        self.setDriver('GV6', 0)
                     
         
         return percent
         LOGGER.info(percent)
         
     # Data Grab from API
-    async def getInformed(self):
+    """async def getInformed(self):
         #percent = percent=setTemp
         #LOGGER.info(percent)
         api = await EcoNetApiInterface.login(self.email, self.password)
@@ -117,7 +141,7 @@ class RheemNode(udi_interface.Node):
                 print.error("Rheem Econet Error:  " + equip_list)
                 return None
         except Exception as e:
-            LOGGER.info("Error: " + str(e))
+            LOGGER.info("Error: " + str(e))"""
 
     def poll(self, polltype):
         if 'shortPoll' in polltype:
@@ -130,8 +154,9 @@ class RheemNode(udi_interface.Node):
         # commands here
     
     def goNow(self, command):
+        asyncio.run(self.setTemp(command))
         #LOGGER.debug("Query sensor {}".format(self.address))
-        asyncio.run(self.getInformed())
+        #asyncio.run(self.getInformed())
         #self.reportDrivers()
         
     def goSet(self, command):
