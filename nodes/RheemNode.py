@@ -67,7 +67,7 @@ class RheemNode(udi_interface.Node):
                     
                     #LOGGER.info("{}" .format(f"{equipment.set_point}"))
                     
-                    LOGGER.info(f"\nOperation mode: {equipment.device_id}\n")
+                    LOGGER.info(f"\nDevice Id: {equipment.device_id}\n")
                     self.setDriver('GV5', str(f"{equipment.device_id}"))
 
                     LOGGER.info(f"\nEnabled: {equipment.enabled}\n")
@@ -102,16 +102,16 @@ class RheemNode(udi_interface.Node):
         self.reportDrivers()
 
     drivers = [
-        {'driver': 'ST', 'value': 0, 'uom': 2},
-        {'driver': 'GV1', 'value': 0, 'uom': 17},
-        {'driver': 'GV2', 'value': 0, 'uom': 25 },
-        {'driver': 'GV3', 'value': 0, 'uom': 56 },
-        {'driver': 'GV4', 'value': 0, 'uom': 25},
-        {'driver': 'GV5', 'value': 0, 'uom': 56},
-        {'driver': 'GV6', 'value': True, 'uom': 2},
+        {'driver': 'ST', 'value': 0, 'uom': 2, 'name': 'Online'},
+        {'driver': 'GV1', 'value': 0, 'uom': 17, 'name': 'Setpoint'},
+        {'driver': 'GV2', 'value': 0, 'uom': 25, 'name': 'Mode'},
+        {'driver': 'GV3', 'value': 0, 'uom': 56, 'name': 'Serial'},
+        {'driver': 'GV4', 'value': 0, 'uom': 25, 'name': 'Modes'},
+        {'driver': 'GV5', 'value': 0, 'uom': 56, 'name': 'ID'},
+        {'driver': 'GV6', 'value': True, 'uom': 2, 'name': 'Enabled?'},
         ]
 
-    id = 'rheemnodeid'
+    id = 'rheemnode'
 
     commands = {
                     'GONOW': goNow

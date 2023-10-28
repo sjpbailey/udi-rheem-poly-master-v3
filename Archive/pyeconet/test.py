@@ -14,7 +14,7 @@ from pyeconet.equipment.water_heater import WaterHeaterOperationMode
 async def main():
     email = "sjpbailey@comcast.net"  # input("Enter your email: ").strip()
     # getpass.getpass(prompt='Enter your password: ')
-    password = "NatiqueRheem61"
+    password = "AcxessExess61!"
     api = await EcoNetApiInterface.login(email, password=password)
     # , EquipmentType.THERMOSTAT
     all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
@@ -29,7 +29,8 @@ async def main():
             equipment.set_set_point = 130
             # equipment.set_set_point(equipment._api.publish(str(
             # equipment.max_temp == 135, equipment.device_id, equipment.serial_number)))
-            # equipment.set_set_point(equipment._api.publish) 135
+            equipment.set_set_point(140)
+            print("{}" .format(equipment.set_point))
             equipment.operation_mode = False
             print(equipment.max_temp)
             print(equipment.min_temp)

@@ -18,8 +18,8 @@ CDM-40 = Error
 CDM-50 = Critical
 
 # mynodetype
-ND-rheemnodeid-NAME = Template Node
-ND-rheemnodeid-ICON = Energy monitor
+ND-rheemnode-NAME = Template Node
+ND-rheemnode-ICON = Energy monitor
 ST-rheemnode-ST-NAME = Node Status
 ST-rheemnode-GV1-NAME = Setpoint
 ST-rheemnode-GV2-NAME = Mode
