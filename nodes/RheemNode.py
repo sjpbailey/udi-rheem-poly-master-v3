@@ -75,15 +75,13 @@ class RheemNode(udi_interface.Node):
                     LOGGER.info(f"\nOperation modes: {equipment.modes}\n")  # Operation modes: [<WaterHeaterOperationMode.OFF: 1>, <WaterHeaterOperationMode.GAS: 6>]
                     self.setDriver('GV4', str(f"{equipment.modes}"))
                     
-                    #LOGGER.info("{}" .format(f"{equipment.set_point}"))
-                    
                     LOGGER.info(f"\nDevice Id: {equipment.device_id}\n")
                     self.setDriver('GV5', str(f"{equipment.device_id}"))
 
                     LOGGER.info(f"\nEnabled: {equipment.enabled}\n")
-                    if {equipment.enabled} == True:
+                    if equipment.enabled == True:
                         self.setDriver('GV6', 1)
-                    if {equipment.enabled} == False:
+                    if equipment.enabled == False:
                         self.setDriver('GV6', 0)
                     
         
@@ -101,10 +99,8 @@ class RheemNode(udi_interface.Node):
         # commands here
     
     def goNow(self, command):
-        #LOGGER.debug("Query sensor {}".format(self.address))
         asyncio.run(self.getInformed())
-        #self.reportDrivers()
-        
+
     def goSet(self, command):
         asyncio.run(self.setTemp(command))
         time.sleep(5)
