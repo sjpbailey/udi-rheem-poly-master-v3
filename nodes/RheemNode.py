@@ -58,7 +58,7 @@ class RheemNode(udi_interface.Node):
 
     # Data Grab from API
     async def getInformed(self):
-        self.percent = self.percent
+        #self.percent = self.percent
         api = await EcoNetApiInterface.login(self.email, self.password)
         all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
         try:
