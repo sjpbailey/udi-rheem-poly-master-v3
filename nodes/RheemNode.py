@@ -94,6 +94,7 @@ class RheemNode(udi_interface.Node):
                         self.setDriver('GV6', 1)
                     else:
                         self.setDriver('GV6', 0)
+            api.subscribe()
             for equip_list in all_equipment.values():
                 for equipment in equip_list:
                     equipment.set_set_point(123)
