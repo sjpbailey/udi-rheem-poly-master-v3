@@ -134,7 +134,7 @@ class RheemNode(udi_interface.Node):
         {'driver': 'GV4', 'value': 0, 'uom': 25, 'name': 'Modes'},
         {'driver': 'GV5', 'value': 0, 'uom': 56, 'name': 'ID'},
         {'driver': 'GV6', 'value': True, 'uom': 2, 'name': 'Enabled?'},
-        {'driver': 'GV7', 'value': 0, 'uom': 17, 'name': 'Setpoint CMD'},
+        {'driver': 'GV7', 'value': 110, 'uom': 17, 'name': 'Setpoint CMD'},
         ]
 
     id = 'rheemnode'
