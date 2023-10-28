@@ -44,7 +44,7 @@ async def main():
             print(f"\nName: {equipment.device_name}\n")
             print("{}" .format(equipment.set_set_point))
             print(f"\nOperation mode: {equipment.modes[0]}\n")
-            equipment.set_set_point(140)
+            equipment.set_set_point(120)
             print("{}" .format(equipment.set_point))
             equipment.set_mode(9)
             # print(json.dump)
