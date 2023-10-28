@@ -14,7 +14,7 @@ from pyeconet.equipment.water_heater import WaterHeaterOperationMode
 async def main():
     email = "sjpbailey@comcast.net"  # input("Enter your email: ").strip()
     # getpass.getpass(prompt='Enter your password: ')
-    password = "AcxessExess61!"
+    password = "access!"
     api = await EcoNetApiInterface.login(email, password=password)
     # , EquipmentType.THERMOSTAT
     all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
