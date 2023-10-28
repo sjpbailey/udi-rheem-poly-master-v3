@@ -71,7 +71,7 @@ async def main():
             #                        'device_id', 'serial_number')
             #payload =  equipment.set_point(130) #json.dumps({"@SETPOINT": equipment.set_point})
 
-            equipment.set_set_point(135)
+            equipment.set_set_point(120)
             print("{}" .format(equipment.set_point))
             # print(json.dump)
             #print(all_equipment,{equipment.device_name}, {equipment.set_point==130})
