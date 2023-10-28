@@ -78,7 +78,7 @@ class RheemNode(udi_interface.Node):
         await asyncio.sleep(5)
         for equip_list in all_equipment.values():
             for equipment in equip_list:
-                equipment.set_set_point(115)
+                #equipment.set_set_point(115)
                 LOGGER.info("{}" .format(equipment.set_point))
         try:
             api = await EcoNetApiInterface.login(self.email, password=self.password)
@@ -87,7 +87,7 @@ class RheemNode(udi_interface.Node):
             for equip_list in all_equipment.values():
                 for equipment in equip_list:
                     LOGGER.info(f"\nName: {equipment.device_name}\n")
-                    equipment.set_set_point(137)
+                    #equipment.set_set_point(137)
                     LOGGER.info(f"\nSet point: {equipment.set_point}\n")
                     self.setDriver('GV1', str(f"{equipment.set_point}"))
                     #LOGGER.info(f"\nDriver GV7:" 'GV7')
