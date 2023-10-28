@@ -62,7 +62,8 @@ class RheemNode(udi_interface.Node):
                 for equipment in equip_list:
                     equipment.set_set_point(percent)
                     LOGGER.info("{}" .format(equipment.set_point))
-                    #asyncio.run(self.getInformed())
+                    asyncio.run(self.getInformed())
+                    
         
         return percent
         LOGGER.info(percent)
@@ -79,7 +80,7 @@ class RheemNode(udi_interface.Node):
             for equipment in equip_list:
                 equipment.set_set_point(115)
                 LOGGER.info("{}" .format(equipment.set_point))
-        """try:
+        try:
             api = await EcoNetApiInterface.login(self.email, password=self.password)
             all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
             api.subscribe()
@@ -116,7 +117,7 @@ class RheemNode(udi_interface.Node):
                 print.error("Rheem Econet Error:  " + equip_list)
                 return None
         except Exception as e:
-            LOGGER.info("Error: " + str(e))"""
+            LOGGER.info("Error: " + str(e))
 
     def poll(self, polltype):
         if 'shortPoll' in polltype:
