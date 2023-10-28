@@ -95,19 +95,12 @@ class RheemNode(udi_interface.Node):
         else:
             api = EcoNetApiInterface.login(self.email, self.password)
             all_equipment = api.get_equipment_by_type([EquipmentType.WATER_HEATER])
-            try:
-                api = EcoNetApiInterface.login(self.email, password=self.password)
-                r = all_equipment = api.get_equipment_by_type([EquipmentType.WATER_HEATER])
-                
-                for equip_list in all_equipment.values():
-                    for equipment in equip_list:
-                        equipment.set_set_point(percent)
-                        LOGGER.info("{}" .format(equipment.set_point))
-                        self.setDriver('GV7', percent)
-                        LOGGER.info('Setpoint = ' + str(percent) + ' Level')
-                        
-            except Exception as e:
-                LOGGER.info("Error: " + str(e))
+            for equip_list in all_equipment.values():
+                for equipment in equip_list:
+                    equipment.set_set_point(percent)
+                    LOGGER.info("{}" .format(equipment.set_point))
+                    self.setDriver('GV7', percent)
+                    LOGGER.info('Setpoint = ' + str(percent) + ' Level')
 
     def poll(self, polltype):
         if 'shortPoll' in polltype:
