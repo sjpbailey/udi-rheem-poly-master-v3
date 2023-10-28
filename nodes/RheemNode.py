@@ -42,6 +42,19 @@ class RheemNode(udi_interface.Node):
         self.goNow(self)
         self.http = urllib3.PoolManager()
 
+    # Temperature Setpoint
+    def setTemp(self, command):
+        ivr_one = 'percent'
+        percent = int(command.get('value'))
+
+        def set_percent(self, command):
+            percent = int(command.get('value')*10)
+        if percent < 110 or percent > 140:
+            LOGGER.error('Invalid Level {}'.format(percent))
+        else:
+            self.setDriver('GV7', percent)
+            self.getInformed()
+
     # Data Grab from API
     async def getInformed(self):
         api = await EcoNetApiInterface.login(self.email, self.password)
@@ -56,6 +69,7 @@ class RheemNode(udi_interface.Node):
                     LOGGER.info(f"\nSet point: {equipment.set_point}\n")
                     self.setDriver('GV1', str(f"{equipment.set_point}"))
                     self.setDriver('GV7')
+                    
                     LOGGER.info(f"\nOperation mode: {equipment.mode.value}\n")  # Operation mode: WaterHeaterOperationMode.GAS
                     self.setDriver('GV2', int(f"{equipment.mode.value}"))
 
@@ -82,29 +96,6 @@ class RheemNode(udi_interface.Node):
                 return None
         except Exception as e:
             LOGGER.info("Error: " + str(e))
-
-    # Temperature Setpoint
-    def setTemp(self, command):
-        ivr_one = 'percent'
-        percent = int(command.get('value'))
-
-        def set_percent(self, command):
-            percent = int(command.get('value')*10)
-        if percent < 110 or percent > 140:
-            LOGGER.error('Invalid Level {}'.format(percent))
-        else:
-            self.setDriver('GV7', percent)
-            self.getInformed()
-            """api = await EcoNetApiInterface.login(self.email, self.password)
-            all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
-            for equip_list in all_equipment.values():
-                for equipment in equip_list:
-                    equipment._api.publish(equipment.device_id, equipment.serial_number, equipment.set_set_point(130))
-                    #equipment.set_set_point(130)
-                    LOGGER.info("{}" .format(equipment.set_point))
-                    self.setDriver('GV7', percent)
-                    LOGGER.info('Setpoint = ' + str(percent) + ' Level')
-            asyncio.run()"""
 
     def poll(self, polltype):
         if 'shortPoll' in polltype:
