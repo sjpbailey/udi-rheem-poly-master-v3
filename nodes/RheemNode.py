@@ -40,7 +40,7 @@ class RheemNode(udi_interface.Node):
         self.password = password
 
     def start(self):
-        self.goNow(self)
+        self.setTemp(self)
         self.http = urllib3.PoolManager()
 
     # Temperature Setpoint
@@ -148,15 +148,14 @@ class RheemNode(udi_interface.Node):
             LOGGER.debug('shortPoll (node)')
             self.reportDrivers()
         else:
-            self.goNow(self)
+            self.goSet(self)
             LOGGER.debug('longPoll (node)')
         
         # commands here
     
     def goNow(self, command):
-        asyncio.run(self.setTemp(command))
         #LOGGER.debug("Query sensor {}".format(self.address))
-        #asyncio.run(self.getInformed())
+        asyncio.run(self.getInformed())
         #self.reportDrivers()
         
     def goSet(self, command):
