@@ -34,6 +34,7 @@
             <accepts>
                 <cmd id="QUERY" />
                 <cmd id="STOP" />
+                <cmd id="START" />
                 
                 <cmd id="SETPT">
                     <p id="" editor="LEVEL" init="GV7" />
