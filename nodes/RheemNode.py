@@ -53,7 +53,7 @@ class RheemNode(udi_interface.Node):
             LOGGER.error('Invalid Level {}'.format(percent))
         else:
             self.setDriver('GV7', percent)
-            self.getInformed()
+            asyncio.run(self.getInformed())
 
     # Data Grab from API
     async def getInformed(self):
