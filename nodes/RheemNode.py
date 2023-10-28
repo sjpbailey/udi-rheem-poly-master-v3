@@ -84,7 +84,7 @@ class RheemNode(udi_interface.Node):
             LOGGER.info("Error: " + str(e))
 
     # Temperature Setpoint
-    async def setTemp(self, command):
+    def setTemp(self, command):
         ivr_one = 'percent'
         percent = int(command.get('value'))
 
@@ -93,11 +93,12 @@ class RheemNode(udi_interface.Node):
         if percent < 110 or percent > 140:
             LOGGER.error('Invalid Level {}'.format(percent))
         else:
-            api = await EcoNetApiInterface.login(self.email, self.password)
-            all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+            api = EcoNetApiInterface.login(self.email, self.password)
+            all_equipment = api.get_equipment_by_type([EquipmentType.WATER_HEATER])
             try:
-                api = await EcoNetApiInterface.login(self.email, password=self.password)
-                r = all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+                api = EcoNetApiInterface.login(self.email, password=self.password)
+                r = all_equipment = api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+                
                 for equip_list in all_equipment.values():
                     for equipment in equip_list:
                         equipment.set_set_point(percent)
@@ -123,8 +124,8 @@ class RheemNode(udi_interface.Node):
         asyncio.run(self.getInformed())
         #self.reportDrivers()
         
-    #def goSet(self, command):
-    #    asyncio.run(self.setTemp(self))
+    def goSet(self, command):
+        asyncio.run(self.setTemp(self))
     
     def query(self,command=None):
         self.reportDrivers()
@@ -144,6 +145,6 @@ class RheemNode(udi_interface.Node):
 
     commands = {
                     'GONOW': goNow,
-                    'SETPT': asyncio.run(setTemp()),
+                    'SETPT': setTemp,
                     
                 }
