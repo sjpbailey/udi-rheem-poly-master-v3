@@ -56,12 +56,13 @@ class RheemNode(udi_interface.Node):
             self.setDriver('GV7', percent)
             asyncio.run(self.getInformed())
         
-            return percent
+        return percent
+        LOGGER.info(percent)
         
     # Data Grab from API
     async def getInformed(self):
-        percent = percent=setTemp
-        LOGGER.info(percent)
+        #percent = percent=setTemp
+        #LOGGER.info(percent)
         api = await EcoNetApiInterface.login(self.email, self.password)
         all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
         try:
@@ -74,7 +75,7 @@ class RheemNode(udi_interface.Node):
                     LOGGER.info(f"\nSet point: {equipment.set_point}\n")
                     self.setDriver('GV1', str(f"{equipment.set_point}"))
                     #LOGGER.info(f"\nDriver GV7:" 'GV7')
-                    equipment.set_point(self.percent)
+                    equipment.set_point('GV7')
                     
                     LOGGER.info(f"\nOperation mode: {equipment.mode.value}\n")  # Operation mode: WaterHeaterOperationMode.GAS
                     self.setDriver('GV2', int(f"{equipment.mode.value}"))
