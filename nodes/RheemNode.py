@@ -81,9 +81,9 @@ class RheemNode(udi_interface.Node):
                     self.setDriver('GV5', str(f"{equipment.device_id}"))
 
                     LOGGER.info(f"\nEnabled: {equipment.enabled}\n")
-                    if str(f"{equipment.enabled}") == True:
+                    if {equipment.enabled} == True:
                         self.setDriver('GV6', 1)
-                    else:
+                    if {equipment.enabled} == False:
                         self.setDriver('GV6', 0)
                     
         
