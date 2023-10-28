@@ -107,8 +107,8 @@ class RheemNode(udi_interface.Node):
                         LOGGER.info('GV7')
             except Exception as e:
                 LOGGER.info("Error: " + str(e))
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(setTemp)
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(set_percent)
 
     def poll(self, polltype):
         if 'shortPoll' in polltype:
