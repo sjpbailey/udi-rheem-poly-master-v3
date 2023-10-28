@@ -84,7 +84,17 @@ class RheemNode(udi_interface.Node):
                     if equipment.enabled == False:
                         self.setDriver('GV6', 0)
                         
-
+    # Stop Power Down Heater
+    async def offHeat(self, command):
+            api = await EcoNetApiInterface.login(self.email, self.password)
+            all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+            api.subscribe()
+            await asyncio.sleep(5)
+        
+            for equip_list in all_equipment.values():
+                for equipment in equip_list:
+                    equipment.set_mode(1)
+        
 
     def poll(self, polltype):
         if 'shortPoll' in polltype:
@@ -103,6 +113,9 @@ class RheemNode(udi_interface.Node):
         asyncio.run(self.setTemp(command))
         time.sleep(5)
         asyncio.run(self.setTemp(command))
+        
+    def stop(self,command):
+        asyncio.run(self.offHeat(command))
     
     def query(self,command=None):
         self.reportDrivers()
@@ -124,5 +137,6 @@ class RheemNode(udi_interface.Node):
                     'GONOW': goNow,
                     'SETPT': goSet,
                     'QUERY': query,
+                    'STOP': stop,
                     
                 }
