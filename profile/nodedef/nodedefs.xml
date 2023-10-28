@@ -16,7 +16,7 @@
         </cmds>
     </nodeDef>
 	<!-- templatenodeid -->
-    <nodeDef id="rheemnodeid" nls="rheemnode">
+    <nodeDef id="rheemnode" nls="rheemnode">
         <editors />
         <sts>
             <st id="GV1" editor="deg_f" />
