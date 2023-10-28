@@ -93,7 +93,7 @@ class RheemNode(udi_interface.Node):
         if percent < 110 or percent > 140:
             LOGGER.error('Invalid Level {}'.format(percent))
         else:
-            async def getInformed(self):
+            async def setTemp(self,):
                 api = await EcoNetApiInterface.login(self.email, self.password)
                 all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
                 try:
