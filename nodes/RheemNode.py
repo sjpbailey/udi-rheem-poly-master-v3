@@ -40,10 +40,10 @@ class RheemNode(udi_interface.Node):
         self.password = password
 
     def start(self):
-        self.goSet(self)
+        self.goSet()
         self.http = urllib3.PoolManager()
 
-    # Temperature Setpoint
+    # Temperature Setpoint Statuses
     async def setTemp(self, command):
         ivr_one = 'percent'
         percent = int(command.get('value'))
