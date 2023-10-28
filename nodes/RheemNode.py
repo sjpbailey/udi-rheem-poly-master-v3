@@ -54,7 +54,6 @@ class RheemNode(udi_interface.Node):
         else:
             self.setDriver('GV7', percent)
             asyncio.run(self.getInformed())
-            percent = self.percent
 
     # Data Grab from API
     async def getInformed(self):
