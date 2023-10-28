@@ -17,24 +17,24 @@ from aiohttp.client_exceptions import ClientError
 async def main():
     email = "sjpbailey@comcast.net"  # input("Enter your email: ").strip()
     # getpass.getpass(prompt='Enter your password: ')
-    password = "NatiqueRheem61"
+    password = "AcxessExess61!"
     api = await EcoNetApiInterface.login(email, password=password)
     # , EquipmentType.THERMOSTAT
     all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
 
-    # api.subscribe()
-    # await asyncio.sleep(5)
-    # for equip_list in all_equipment.values():
-    #    for equipment in equip_list:
-    #discover: {'address': 'controller', 'cmd': 'DISCOVER', 'query': {}}
-    # dict_values([[<pyeconet.equipment.water_heater.WaterHeater object at 0x10d4ed410>]])
+    api.subscribe()
+    await asyncio.sleep(5)
+    for equip_list in all_equipment.values():
+        for equipment in equip_list:
+            discover: {'address': 'controller', 'cmd': 'DISCOVER', 'query': {}}
+    #        dict_values([[<pyeconet.equipment.water_heater.WaterHeater object at 0x10d4ed410>]])
     #            print(f"\nName: {all_equipment.values}")
     #            print("\n{equipment}")
     #            print("\n" f"{all_equipment.values}")
     #            print("\n{}" .format(equipment.device_name))
     #            print(f"\nName: {equipment.device_name}\n")
     #            print("\n")
-    #print("{}" .format(equipment.set_point))
+            print("{}" .format(equipment.set_point))
     # 3print("{}" .format(equipment.modes))
     # 4print("{}" .format(equipment.device_id))
     # 5print("{}" .format(equipment.serial_number))
@@ -69,9 +69,10 @@ async def main():
             # AttributeError: 'NoneType' object has no attribute 'publish'
             # equipment.set_set_point(equipment.set_set_point(135),
             #                        'device_id', 'serial_number')
-            payload = json.dumps({"@SETPOINT": equipment.set_point+2})
+            #payload =  equipment.set_point(130) #json.dumps({"@SETPOINT": equipment.set_point})
 
-            equipment.set_set_point(equipment.set_point(payload))
+            equipment.set_set_point(135)
+            print("{}" .format(equipment.set_point))
             # print(json.dump)
             #print(all_equipment,{equipment.device_name}, {equipment.set_point==130})
             # print(pyeconet.api)
