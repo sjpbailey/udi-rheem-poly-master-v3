@@ -63,10 +63,8 @@ class RheemNode(udi_interface.Node):
                     equipment.set_set_point(percent)
                     LOGGER.info("{}" .format(equipment.set_point))
                     LOGGER.info(f"\nName: {equipment.device_name}\n")
-                    #equipment.set_set_point(137)
                     LOGGER.info(f"\nSet point: {equipment.set_point}\n")
-                    #self.setDriver('GV1', str(f"{equipment.set_point}"))
-                    #LOGGER.info(f"\nDriver GV7:" 'GV7')
+                    self.setDriver('GV1', str(f"{equipment.set_point}"))
                     
                     LOGGER.info(f"\nOperation mode: {equipment.mode.value}\n")  # Operation mode: WaterHeaterOperationMode.GAS
                     self.setDriver('GV2', int(f"{equipment.mode.value}"))
