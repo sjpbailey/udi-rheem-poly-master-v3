@@ -53,12 +53,11 @@ class RheemNode(udi_interface.Node):
             LOGGER.error('Invalid Level {}'.format(percent))
         else:
             self.setDriver('GV7', percent)
-            percent = self.percent
             asyncio.run(self.getInformed())
 
     # Data Grab from API
     async def getInformed(self):
-        #self.percent = self.percent
+        percent = percent
         api = await EcoNetApiInterface.login(self.email, self.password)
         all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
         try:
