@@ -1,4 +1,5 @@
 
+from tempfile import gettempdir
 import udi_interface
 import sys
 import time
@@ -54,12 +55,13 @@ class RheemNode(udi_interface.Node):
         else:
             self.setDriver('GV7', percent)
             asyncio.run(self.getInformed())
-        global variable
-        variable = percent
+        
+            return percent
         
     # Data Grab from API
     async def getInformed(self):
-        LOGGER.info(self.percent)
+        percent = percent=setTemp
+        LOGGER.info(percent)
         api = await EcoNetApiInterface.login(self.email, self.password)
         all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
         try:
