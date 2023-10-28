@@ -65,6 +65,8 @@ class RheemNode(udi_interface.Node):
         #LOGGER.info(percent)
         api = await EcoNetApiInterface.login(self.email, self.password)
         all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
+        api.subscribe()
+        await asyncio.sleep(5)
         for equip_list in all_equipment.values():
             for equipment in equip_list:
                 equipment.set_set_point(115)
