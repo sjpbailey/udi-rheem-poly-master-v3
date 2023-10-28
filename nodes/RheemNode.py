@@ -146,7 +146,7 @@ class RheemNode(udi_interface.Node):
             LOGGER.debug('shortPoll (node)')
             self.reportDrivers()
         else:
-            self.goSet(self)
+            self.query()
             LOGGER.debug('longPoll (node)')
         
         # commands here
