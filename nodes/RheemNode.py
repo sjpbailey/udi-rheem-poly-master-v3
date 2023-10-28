@@ -53,6 +53,8 @@ class RheemNode(udi_interface.Node):
             LOGGER.error('Invalid Level {}'.format(percent))
         else:
             self.setDriver('GV7', percent)
+            global per
+            per = percent
             asyncio.run(self.getInformed())
 
     # Data Grab from API
@@ -70,7 +72,7 @@ class RheemNode(udi_interface.Node):
                     LOGGER.info(f"\nSet point: {equipment.set_point}\n")
                     self.setDriver('GV1', str(f"{equipment.set_point}"))
                     #LOGGER.info(f"\nDriver GV7:" 'GV7')
-                    equipment.set_point(self.percent)
+                    equipment.set_point(percent)
                     
                     LOGGER.info(f"\nOperation mode: {equipment.mode.value}\n")  # Operation mode: WaterHeaterOperationMode.GAS
                     self.setDriver('GV2', int(f"{equipment.mode.value}"))
