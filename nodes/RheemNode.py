@@ -85,7 +85,7 @@ class RheemNode(udi_interface.Node):
                         self.setDriver('GV6', 0)
                         
     # Stop Power Down Heater
-    async def offHeat(self, command):
+    """async def offHeat(self, command):
             api = await EcoNetApiInterface.login(self.email, self.password)
             all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
             api.subscribe()
@@ -105,7 +105,7 @@ class RheemNode(udi_interface.Node):
             for equip_list in all_equipment.values():
                 for equipment in equip_list:
                     equipment.set_mode(6)
-                    self.setDriver('GV6', 1)
+                    self.setDriver('GV6', 1)"""
         
 
     def poll(self, polltype):
