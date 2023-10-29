@@ -41,7 +41,7 @@ class RheemNode(udi_interface.Node):
 
     def start(self):
         self.query()
-        self.http = urllib3.PoolManager()
+        #self.http = urllib3.PoolManager()
 
     # Temperature Setpoint Statuses
     async def setTemp(self, command):
@@ -126,13 +126,13 @@ class RheemNode(udi_interface.Node):
         time.sleep(5)
         asyncio.run(self.setTemp(command))
         
-    def stop(self,command):
+    def stop(self, command):
         asyncio.run(self.offHeat(command))
         
-    def start(self,command):
+    def start(self, command):
         asyncio.run(self.onHeat(command))
     
-    def query(self,command=None):
+    def query(self, command=None):
         self.reportDrivers()
 
     drivers = [
