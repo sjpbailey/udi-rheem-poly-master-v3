@@ -33,8 +33,8 @@
             <sends />
             <accepts>
                 <cmd id="QUERY" />
-                <cmd id="STOP" />
-                <cmd id="START" />
+                <cmd id="DOF" />
+                <cmd id="DON" />
                 
                 <cmd id="SETPT">
                     <p id="" editor="LEVEL" init="GV7" />
