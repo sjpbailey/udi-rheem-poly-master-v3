@@ -17,7 +17,7 @@ from aiohttp.client_exceptions import ClientError
 async def main():
     email = "sjpbailey@comcast.net"  # input("Enter your email: ").strip()
     # getpass.getpass(prompt='Enter your password: ')
-    password = "AcxessExess61!"
+    password = "access password"
     api = await EcoNetApiInterface.login(email, password=password)
     # , EquipmentType.THERMOSTAT
     all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
@@ -43,13 +43,13 @@ async def main():
             # equipment.set_set_point()
             print(f"\nName: {equipment.device_name}\n")
             print("{}" .format(equipment.set_set_point))
-            print(f"\nOperation mode: {equipment.modes[0]}\n")
-            
+            print(f"\nOperation mode: {equipment.modes[1]}\n")
+            print(equipment.mode.value)
             print("{}" .format(equipment.set_point))
             #time.sleep(10)
             #equipment.set_mode(1)
             #time.sleep(10)
-            equipment.set_mode(1)
+            #equipment.set_mode(6)
             #time.sleep(3)
             #equipment.set_set_point(140)
             #time.sleep(10)
