@@ -41,7 +41,7 @@ class RheemNode(udi_interface.Node):
 
     def start(self):
         self.query()
-        #self.http = urllib3.PoolManager()
+        self.http = urllib3.PoolManager()
 
     # Temperature Setpoint Statuses
     async def setTemp(self, command):
