@@ -31,7 +31,7 @@ class RheemController(udi_interface.Node):
     def start(self):
         self.poly.updateProfile()
         self.poly.setCustomParamsDoc()
-        self.discover(self)
+        self.discover()
 
     def parameterHandler(self, params):
         self.Parameters.load(params)
