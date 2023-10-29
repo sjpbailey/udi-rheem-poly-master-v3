@@ -119,7 +119,7 @@ class RheemNode(udi_interface.Node):
         # commands here
     
     def goNow(self, command):
-        asyncio.run(self.getInformed())
+        asyncio.run(self.getInformed(command))
 
     def goSet(self, command):
         asyncio.run(self.setTemp(command))
