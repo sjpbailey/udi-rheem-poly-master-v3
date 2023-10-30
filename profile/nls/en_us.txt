@@ -1,6 +1,6 @@
 
 # controller
-ND-controller-NAME = Template NodeServer Controller
+ND-controller-NAME = Controller
 ND-controller-ICON = GenericRspCtl
 CMD-ctl-QUERY-NAME = Query
 CMD-ctl-DISCOVER-NAME = Re-Discover
@@ -18,8 +18,8 @@ CDM-40 = Error
 CDM-50 = Critical
 
 # mynodetype
-ND-rheemnode-NAME = Template Node
-ND-rheemnode-ICON = Energy monitor
+ND-rheemnode-NAME = Gas Water Heater
+ND-rheemnode-ICON = SmokeSensor
 ST-rheemnode-ST-NAME = Node Status
 ST-rheemnode-GV1-NAME = Current Setpoint
 ST-rheemnode-GV7-NAME = SetPoint Heater
