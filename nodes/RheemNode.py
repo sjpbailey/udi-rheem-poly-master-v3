@@ -96,7 +96,7 @@ class RheemNode(udi_interface.Node):
                     equipment.set_mode(1)
                     self.setDriver('GV6', 0)
                     
-    # Stop Power Down Heater
+    # Start Power Up Heater
     async def onHeat(self, command):
             api = await EcoNetApiInterface.login(self.email, self.password)
             all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
@@ -115,9 +115,7 @@ class RheemNode(udi_interface.Node):
         else:
             self.query()
             LOGGER.debug('longPoll (node)')
-        
-        # commands here
-    
+
     def goNow(self, command):
         asyncio.run(self.getInformed(command))
 
