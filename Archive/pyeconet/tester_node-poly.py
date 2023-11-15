@@ -15,7 +15,7 @@ from aiohttp.client_exceptions import ClientError
 
 
 async def main():
-    email = "sjpbailey@comcast.net"  # input("Enter your email: ").strip()
+    email = "email"  # input("Enter your email: ").strip()
     # getpass.getpass(prompt='Enter your password: ')
     password = "access password"
     api = await EcoNetApiInterface.login(email, password=password)

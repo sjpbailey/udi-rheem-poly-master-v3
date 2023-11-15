@@ -12,7 +12,7 @@ from pyeconet.equipment.water_heater import WaterHeaterOperationMode
 
 
 async def main():
-    email = "sjpbailey@comcast.net"  # input("Enter your email: ").strip()
+    email = ""  # input("Enter your email: ").strip()
     # getpass.getpass(prompt='Enter your password: ')
     password = "access!"
     api = await EcoNetApiInterface.login(email, password=password)
