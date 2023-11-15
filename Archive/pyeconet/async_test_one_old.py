@@ -6,9 +6,9 @@ from pyeconet.equipment import EquipmentType
 #logging.getLogger().setLevel(logging.DEBUG)
 
 async def main():
-    email = "sjpbailey@comcast.net"  # input("Enter your email: ").strip()
+    email = "email"  # input("Enter your email: ").strip()
     # getpass.getpass(prompt='Enter your password: ')
-    password = "AcxessExess61!"
+    password = "pass"
     api = await EcoNetApiInterface.login(email, password)
     all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
 
