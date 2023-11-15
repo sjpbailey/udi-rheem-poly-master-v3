@@ -242,8 +242,8 @@ class Controller(polyinterface.Controller):
         logging.basicConfig()
         logging.getLogger().setLevel(logging.DEBUG)
         async def main():
-            email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
-            password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')
+            email = "" #input("Enter your email: ").strip()
+            password = "" #getpass.getpass(prompt='Enter your password: ')
             api = EcoNetApiInterface.login(email, password=password)
             all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER]) #, EquipmentType.THERMOSTAT
             api.subscribe()

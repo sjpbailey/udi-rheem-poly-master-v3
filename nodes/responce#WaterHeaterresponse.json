@@ -89,8 +89,8 @@
 	},
 
 	"options": {
-		"_id": "60a36f10da6f34d3d697d813",
-		"account_id": "4856732562345223",
+		"_id": "",
+		"account_id": "",
 		"allow_email_notifications": false,
 		"allow_product_alert_emails": true,
 		"allow_product_alert_text_msg": true,
@@ -100,7 +100,7 @@
         "allow_text_notifications": false,
         "cb_service_account": false,
         "connected": false,
-        "email": "sjpbailey@comcast.net",
+        "email": "",
         "first_name": "Steven",
         "is_phone_verified": true,
         "last_name": "Bailey",
@@ -111,11 +111,11 @@
         "share_status": 0,
         "success": true,
         "temperature_display_unit": "Fahrenheit",
-        "user_id": "ccc1d2f00bbcf0ccd8c8fffdc3a001"
+        "user_id": ""
 	},
 	
-	"user_id": "ccc1d2f00bbcf0ccd8c8fffdc3a001",
-	"user_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJjY2MxZDJmMDBiYmNmMGNjZDhjOGZmZmRjM2EwMDEiLCJzaWQiOiIxYTJjNWRmZS03YTM4LTQ4ZGItYjFjNi1lNWY0M2EyNzYyNWEiLCJ1dCI6MiwidHQiOjEsImV4cCI6LTEsImlhdCI6MTYzMTUzODgzM30.5rqGeqWWYCDA1iZWc4ahBFrsH_rC-EOTzT4zC63a8jQ"
+	"user_id": "",
+	"user_token": ""
     
 }
 

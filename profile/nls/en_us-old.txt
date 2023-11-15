@@ -1,6 +1,0 @@
-ND-controller-NAME = Example - Rheem
-ND-controller-ICON = Output
-ST-ctl-ST-NAME = NodeServer Online
-
-CMD-str-DISCOVER-NAME = Re-Discover
-CMD-str-GONOW-NAME = Poll

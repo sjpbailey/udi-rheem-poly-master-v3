@@ -54,8 +54,8 @@ class RheemController(udi_interface.Node):
 
     async def goNow(self):
     
-    #email = "sjpbailey@comcast.net" #input("Enter your email: ").strip()
-    #password = "NatiqueRheem61" #getpass.getpass(prompt='Enter your password: ')  
+    #email = "" #input("Enter your email: ").strip()
+    #password = "" #getpass.getpass(prompt='Enter your password: ')  
     
             api = await EcoNetApiInterface.login(email, password)
             all_equipment = await api.get_equipment_by_type([EquipmentType.WATER_HEATER])
