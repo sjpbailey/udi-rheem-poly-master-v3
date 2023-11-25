@@ -16,7 +16,7 @@
         </cmds>
     </nodeDef>
 	<!-- rheem node -->
-    <nodeDef id="rheemnode" nls="rheemnode">
+    <nodeDef id="rheemnode" nls="rheem">
         <editors />
         <sts>
             <st id="GV2" editor="MODE" />

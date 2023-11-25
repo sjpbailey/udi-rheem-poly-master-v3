@@ -20,24 +20,24 @@ CDM-50 = Critical
 # mynodetype
 ND-rheemnode-NAME = Gas Water Heater
 ND-rheemnode-ICON = SmokeSensor
-ST-rheemnode-ST-NAME = Node Status
-ST-rheemnode-GV1-NAME = Current Setpoint
-ST-rheemnode-GV7-NAME = SetPoint Heater
-ST-rheemnode-GV2-NAME = Mode
-#ST-rheemnode-GV3-NAME = Serial Number
-#ST-rheemnode-GV4-NAME = Modes
-#ST-rheemnode-GV5-NAME = Device ID
-ST-rheemnode-GV6-NAME = Enabled
+ST-rheem-ST-NAME = Node Status
+ST-rheem-GV1-NAME = Current Setpoint
+ST-rheem-GV7-NAME = SetPoint Heater
+ST-rheem-GV2-NAME = Mode
+#ST-rheem-GV3-NAME = Serial Number
+#ST-rheem-GV4-NAME = Modes
+#ST-rheem-GV5-NAME = Device ID
+ST-rheem-GV6-NAME = Enabled
 
-CMD-rheemnode-SETPT-NAME = SetPoint Command
-CMD-rheemnode-QUERY-NAME = Driver Info
-CMD-rheemnode-DOF-NAME = Disable
-CMD-rheemnode-DON-NAME = Enable
+CMD-rheem-SETPT-NAME = SetPoint Command
+CMD-rheem-QUERY-NAME = Driver Info
+CMD-rheem-DOF-NAME = Disable
+CMD-rheem-DON-NAME = Enable
 
-#CMD-rheemnode-GONOW-NAME = API Info
+#CMD-rheem-GONOW-NAME = API Info
 
-#CMD-rheemnode-DON-NAME = On
-#CMD-rheemnode-DOF-NAME = Off
+#CMD-rheem-DON-NAME = On
+#CMD-rheem-DOF-NAME = Off
 
 STS-0 = DOWN
 STS-1 = OFF
